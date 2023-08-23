@@ -9,8 +9,7 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build",
-    "horoscope-test": "cd client/src/utils/api && node dailyhoroscope.js",
-    "tarot-test": "cd client/src/utils/api && node tarot.js"
+    "api-test": "cd client/src/utils/api && node index.js"
   },
   "author": "",
   "license": "ISC",
