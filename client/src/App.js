@@ -5,6 +5,8 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
 import Login from './pages/login';
 import NewUser from './pages/newUser';
+import Horoscope from './pages/Horoscope';
+import Tarot from './pages/Tarot';
 import Header from './components/header';
 import Footer from './components/footer';
 import Particle from './components/particle';
@@ -32,6 +34,14 @@ function App() {
             <Route 
               path="/home" 
               element={<Home />}
+            />
+            <Route
+              path="/horoscope"
+              element={<Horoscope/>}
+            />
+            <Route
+              path="/tarot"
+              element={<Tarot/>}
             />
             {/* Add routes for the other pages */}
           </Routes>
