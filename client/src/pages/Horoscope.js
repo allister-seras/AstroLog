@@ -15,7 +15,7 @@ const Horoscope = () => {
     const timezone = -8.0;
     // defining horoscope data function
     const dailyHoroData = function(zodiacName, timezone)  {
-    
+        // defining function
         const getResponse = (zodiacName, timezone) => {
           const url = "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/" + zodiacName;
           const auth = "Basic" + " " + btoa(userID + ":" + apiKey);
@@ -30,16 +30,19 @@ const Horoscope = () => {
             const date = response.data.prediction_date;
             const prediction = response.data.prediction;
             setHoroscopeData({ prediction_date: date, prediction: prediction });
-            console.log(horoscopeData);
           });
         };
-        
+        // calling function
         getResponse(zodiacName, timezone);
     };
     // calling horoscope function (empty array so it runs once)
     useEffect(() => {
         dailyHoroData(zodiacName, timezone);
     }, []);
+    // logging information to console only after state change
+    useEffect(() => {
+      console.log(horoscopeData);
+    }, [horoscopeData]);
     
 
     return (
