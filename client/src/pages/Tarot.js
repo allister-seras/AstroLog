@@ -10,7 +10,6 @@ const Tarot = () => {
     // api info imported from dotenv
     const userID = process.env.REACT_APP_USER_ID;
     const apiKey = process.env.REACT_APP_API_KEY;
-    console.log(apiKey);
     // ENTER TAROT PULLS HERE (will use random number generator for this)
     const love = 18;
     const career = 2;
@@ -32,18 +31,22 @@ const Tarot = () => {
           }).then((response) => {
           const reading = response.data;
           setTarotRead(reading);
-          console.log(tarotRead);
         });
       };
     
       getResponse(love, career, finance);
     
-  };
-  // calling tarot function (empty array so it runs once)
-  useEffect(() => {
-    tarotData(love, career, finance);
-  }, []);
+    };
+    
+    // calling tarot function (empty array so it runs once)
+    useEffect(() => {
+      tarotData(love, career, finance);
+    }, []);
 
+    // console.log after state change from tarot function
+    useEffect(() => {
+      console.log(tarotRead);
+    }, [tarotRead]);
 
     return (
         <div>

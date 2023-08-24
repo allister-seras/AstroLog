@@ -30,16 +30,21 @@ const Horoscope = () => {
             const date = response.data.prediction_date;
             const prediction = response.data.prediction;
             setHoroscopeData({ prediction_date: date, prediction: prediction });
-            console.log(horoscopeData);
           });
         };
         
         getResponse(zodiacName, timezone);
     };
+    
     // calling horoscope function (empty array so it runs once)
     useEffect(() => {
         dailyHoroData(zodiacName, timezone);
     }, []);
+
+    // console.log after state change from horoscope function
+    useEffect(() => {
+      console.log(horoscopeData);
+    }, [horoscopeData]);
     
 
     return (
