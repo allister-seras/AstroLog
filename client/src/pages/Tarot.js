@@ -10,14 +10,13 @@ const Tarot = () => {
     // api info imported from dotenv
     const userID = process.env.REACT_APP_USER_ID;
     const apiKey = process.env.REACT_APP_API_KEY;
-    console.log(apiKey);
     // ENTER TAROT PULLS HERE (will use random number generator for this)
     const love = 18;
     const career = 2;
     const finance = 54;
     // defining tarot data function
     const tarotData = function(love, career, finance)  {
-    
+      // defining function
       const getResponse = (love, career, finance) => {
         const url = "https://json.astrologyapi.com/v1/tarot_predictions";
         const auth = "Basic" + " " + btoa(userID + ":" + apiKey);
@@ -32,10 +31,9 @@ const Tarot = () => {
           }).then((response) => {
           const reading = response.data;
           setTarotRead(reading);
-          console.log(tarotRead);
         });
       };
-    
+      // calling function
       getResponse(love, career, finance);
     
   };
@@ -43,6 +41,10 @@ const Tarot = () => {
   useEffect(() => {
     tarotData(love, career, finance);
   }, []);
+  // logging information to console only after state change
+  useEffect(() => {
+    console.log(tarotRead);
+  }, [tarotRead]);
 
 
     return (
