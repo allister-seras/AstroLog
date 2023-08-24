@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import Home from './pages/Home';
+import Login from './pages/login';
+import NewUser from './pages/newUser';
 import Header from './components/header';
 import Footer from './components/footer';
 
@@ -18,10 +20,14 @@ function App() {
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
-            {/*<Route
+            <Route
               path="/login"
               element={<Login/>}
-            />*/}
+            />
+            <Route 
+              path="/newUser"
+              element={<NewUser/>}
+            />
             <Route 
               path="/home" 
               element={<Home />}
