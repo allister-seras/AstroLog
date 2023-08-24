@@ -6,7 +6,14 @@ import Cards from '../components/cards';
 
 const Horoscope = () => {
     // set initial form state
-    const [horoscopeData, setHoroscopeData] = useState({ prediction_date: '', prediction: ''});
+    const [horoscopeData, setHoroscopeData] = useState({ prediction_date: '', prediction: {
+      emotions: '',
+      health: '',
+      luck: '',
+      personal_life: '',
+      profession: '',
+      travel: ''
+    } });
     // api info imported from dotenv
     const userID = process.env.REACT_APP_USER_ID;
     const apiKey = process.env.REACT_APP_API_KEY;
@@ -28,7 +35,14 @@ const Horoscope = () => {
             }
             }).then((response) => {
             const date = response.data.prediction_date;
-            const prediction = response.data.prediction;
+            const prediction = {
+              emotions: response.data.prediction.emotions,
+              health: response.data.prediction.health,
+              luck: response.data.prediction.luck,
+              personal_life: response.data.prediction.personal_life,
+              profession: response.data.prediction.profession,
+              travel: response.data.prediction.travel
+            };
             setHoroscopeData({ prediction_date: date, prediction: prediction });
           });
         };
@@ -46,9 +60,24 @@ const Horoscope = () => {
     
 
     return (
+      <section>
         <div>
-            <h1></h1>
+          <h1>Prediction</h1>
+          <h3>Date: {horoscopeData.prediction_date}</h3>
+          <h2>Emotions</h2>
+          <p>{horoscopeData.prediction.emotions}</p>
+          <h2>Health</h2>
+          <p>{horoscopeData.prediction.health}</p>
+          <h2>Luck</h2>
+          <p>{horoscopeData.prediction.luck}</p>
+          <h2>Personal Life</h2>
+          <p>{horoscopeData.prediction.personal_life}</p>
+          <h2>Profession</h2>
+          <p>{horoscopeData.prediction.profession}</p>
+          <h2>Travel</h2>
+          <p>{horoscopeData.prediction.travel}</p>
         </div>
+      </section>
     );
 };
 
