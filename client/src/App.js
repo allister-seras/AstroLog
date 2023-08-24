@@ -5,6 +5,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
 import Header from './components/header';
 import Footer from './components/footer';
+import Particle from './components/particle';
 
 const client = new ApolloClient({
   uri: '/graphql',
