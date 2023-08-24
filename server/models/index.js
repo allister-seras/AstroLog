@@ -1,4 +1,4 @@
-const User = require('./User');
-const Journal = require('./Journal');
+const Cards = require('./Cards');
+const Horoscope = require('./Horoscope');
 
-module.exports = { User, Journal };
+module.exports = { Cards, Horoscope };
