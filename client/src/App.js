@@ -7,6 +7,7 @@ import Login from './pages/login';
 import NewUser from './pages/newUser';
 import Header from './components/header';
 import Footer from './components/footer';
+import Particle from './components/particle';
 
 const client = new ApolloClient({
   uri: '/graphql',
