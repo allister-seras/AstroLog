@@ -1,4 +1,6 @@
 const { Schema, model } = require('mongoose');
+const horoscopeSchema = require('./Horoscope')
+const tarotReadSchema = require('./tarotRead')
 
 const userSchema = new Schema(
     {
@@ -14,16 +16,22 @@ const userSchema = new Schema(
             unique: true,
             match: [/\w+@\w+(\.\w{2,3})+/, 'Invalid email address']
         },
+        password: {
+            type: String,
+            required: true,
+            minlength: 5,
+          },
         zodiacName: {
             type: String,
             required: true,
 
         },
         timezone: {
-            type: String,
+            type: SchemaTypes.Double,
             required: true,
-
         },
+        dailyHoroscope: horoscopeSchema,
+        tarotPrediction: tarotReadSchema
     },
     {
         //virtual is not a property of the model but it will still be created as a field
@@ -33,6 +41,19 @@ const userSchema = new Schema(
     }
 );
 
-const User = model('user', userSchema);
+userSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+  
+    next();
+  });
+
+  userSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+  };
+
+const User = model('User', userSchema);
 
 module.exports = User;
