@@ -1,4 +1,4 @@
-const { Journal, tarotRead, User } = require('../models');
+const { Journal, tarotRead, User, Cards } = require('../models');
 
 const resolvers = {
     Query: {
@@ -9,10 +9,12 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username }).populate('journals');
         },
+        tarotCard: async (parent, { tarotId }) => {
+            return Cards.findOne({ tarotId: tarotId });
+        },
         journals: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Journal.find(params).sort({ createdAt: -1 });
-
         },
         me: async (parent, args, context) => {
             if (context.user) {
@@ -26,7 +28,7 @@ const resolvers = {
 
 //   },
 // };
-}
+};
     
 
 

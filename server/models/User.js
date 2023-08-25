@@ -1,6 +1,4 @@
 const { Schema, model } = require('mongoose');
-const horoscopeSchema = require('./Horoscope')
-const tarotReadSchema = require('./tarotRead')
 
 const userSchema = new Schema(
     {
@@ -24,14 +22,19 @@ const userSchema = new Schema(
         zodiacName: {
             type: String,
             required: true,
-
         },
         timezone: {
-            type: SchemaTypes.Double,
+            type: Number,
             required: true,
         },
-        dailyHoroscope: horoscopeSchema,
-        tarotPrediction: tarotReadSchema
+        dailyHoroscope: [{
+            type: Schema.Types.ObjectId, 
+            ref: 'Horoscope'
+        }],
+        tarotPrediction: [{
+            type: Schema.Types.ObjectId, 
+            ref: 'Tarot'
+        }]
     },
     {
         //virtual is not a property of the model but it will still be created as a field

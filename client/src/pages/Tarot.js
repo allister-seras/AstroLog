@@ -1,14 +1,13 @@
-import react, { useState, useEffect } from 'react'
-import { useQuery } from '@apollo/client';
+import React, { useState, useEffect } from 'react'
 import axios from "axios";
 
-import Cards from '../components/cards';
 
 const Tarot = () => {
     // set initial state of tarot cards
     const [tarotCards, setTarotCards] = useState({ loveCard: '', careerCard: '', financeCard: ''});
     // set initial state of card reads
     const [tarotRead, setTarotRead] = useState({ love: '', career: '', finance: ''});
+    
     // api info imported from dotenv
     const userID = process.env.REACT_APP_USER_ID;
     const apiKey = process.env.REACT_APP_API_KEY;
@@ -90,7 +89,7 @@ const Tarot = () => {
     }, [tarotRead]);
 
   return (
-      <div>
+    <div>
       {checkAllCards ? (
         // if all cards have been pulled render this
         <div>
@@ -106,17 +105,23 @@ const Tarot = () => {
         <div>
             <h1>Card Selection</h1>
             <p>Click the buttons below to select tarot cards for each category. Once all three have been selected we will display your reading!</p>
-            <button id="love" onClick={handleCardPull}>
-              Love
-            </button>
-            <button id="career" onClick={handleCardPull}>
-              Career
-            </button>
-            <button id="finance" onClick={handleCardPull}>
-              Finance
-            </button>
+            <div>
+              <button id="love" onClick={handleCardPull}>
+                Love
+              </button>
+            </div>
+            <div>
+              <button id="career" onClick={handleCardPull}>
+                Career
+              </button>
+            </div>
+            <div>
+              <button id="finance" onClick={handleCardPull}>
+                Finance
+              </button>
+            </div>
         </div>
-    )};
+      )}
     </div>
   )
 };
