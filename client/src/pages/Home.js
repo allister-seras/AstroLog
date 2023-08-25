@@ -11,6 +11,8 @@ const Home = () => {
     return (
     <div>
         {/* user welcome */}
+        <h1>Welcome to AstroLog</h1>
+        <h2>Let The Stars Guide Your Story</h2>
         <div>
             {data.map((section) => {
             <Cards 
