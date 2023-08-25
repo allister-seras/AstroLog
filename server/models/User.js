@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-require('mongoose-double')(mongoose);
+
 const userSchema = new Schema(
     {
         username: {
@@ -28,15 +27,7 @@ const userSchema = new Schema(
         timezone: {
             type: SchemaTypes.Double,
             required: true,
-
         },
-        journal: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Journal'
-            }
-        ]
-        
     },
     {
         //virtual is not a property of the model but it will still be created as a field

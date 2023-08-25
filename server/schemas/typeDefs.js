@@ -19,10 +19,15 @@ type Aut {
     src: String
   }
 
+  type Tarot {
+    reading: String!
+    createdAt: String
+  }
+
   type Horoscope {
     reading: String
-    timezone: SchemaTypes.Double
   }
 `;
 
 module.exports = typeDefs;
+// refer horoscope to user and tarotRead
