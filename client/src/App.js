@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/client';
+//import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
 import Login from './pages/login';
@@ -10,8 +11,12 @@ import Tarot from './pages/Tarot';
 import Header from './components/header';
 import Footer from './components/footer';
 
+const link = new HttpLink({
+  uri: "http://localhost:3001/graphql"
+});
+
 const client = new ApolloClient({
-  uri: '/graphql',
+  link: link,
   cache: new InMemoryCache(),
 });
 

@@ -5,10 +5,10 @@ const typeDefs = gql`
     _id: ID
     username: String
     zodiacname: String
-    journal: [Journal]!
+    journal: [Journal]
   }
 
-  type Cards {
+  type Card {
     tarotId: Int
     tarotName: String
     src: String
@@ -52,13 +52,21 @@ const typeDefs = gql`
     savedHoroscope: [HoroscopeInput]
     savedReading: [TarotInput]
   }
+
+  type Query {
+    me: User
+    users: [User]
+    user(username: String!): User
+    tarotCard(tarotId: Int!): Card
+    journals(username: String): [Journal]
+  }
   
   type Mutations {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, username: String, password: String!): Auth
     horoscopeReading(reading: String!): Horoscope
     tarotPredction(tarotId: Int, reading: String, createdAt: Int): Tarot
-    journalEnteries(input: JournalEntry): Journal
+    journalEntries(input: JournalEntryInput): Journal
   }
 `;
 
