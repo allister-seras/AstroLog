@@ -18,6 +18,7 @@ const Tarot = () => {
     const tarotData = function(love, career, finance)  {
       // defining function
       const getResponse = (love, career, finance) => {
+        console.log(`${userID} ${apiKey}`);
         const url = "https://json.astrologyapi.com/v1/tarot_predictions";
         const auth = "Basic" + " " + btoa(userID + ":" + apiKey);
         axios.post(url, {
@@ -45,17 +46,18 @@ const Tarot = () => {
   }, []);
   // logging information to console only after state change
   useEffect(() => {
-    console.log(tarotRead);
+    console.log('');
   }, [tarotRead]);
 
     return (
         <div>
             <h1>Love</h1>
-            <p>{tarotRead.love}</p>
+              <p>{tarotRead.love}</p>
             <h1>Career</h1>
-            <p>{tarotRead.career}</p>
+              <p>{tarotRead.career}</p>
             <h1>Finance</h1>
-            <p>{tarotRead.finance}</p>
+              <p>{tarotRead.finance}</p>
+            {/* save button */}
         </div>
     );
 };
