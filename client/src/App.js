@@ -21,7 +21,7 @@ function App() {
     <ApolloProvider client={client}>
       <Header />
       <Router>
-        <div className="flex-column justify-center align-center min-100-vh bg-primary">
+        <main className="flex-column justify-center align-center min-100-vh">
           <Routes>
             <Route
               path="/login"
@@ -45,7 +45,7 @@ function App() {
             />
             {/* Add routes for the other pages */}
           </Routes>
-        </div>
+        </main>
       </Router>
     <Footer />
     </ApolloProvider>

@@ -8,39 +8,37 @@ body {
 
 .nav {
     color: rgb(192, 181, 29);
-    background-color: rgba(28, 24, 60, 0.3);
+    background-color: rgba(28, 24, 60, 0.302);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 0 1rem;
-    height: 100px;
 }
 
 .site-title {
-    font-size: 3rem;
+    font-size: 4rem;
     align-items: center;
+    margin: 1rem;
+    margin-bottom: 0;
 }
 
 .nav ul {
-    padding: 20px;
-    margin: 20px;
+    padding: 0;
     list-style: none;
     display: flex;
-    gap: 1rem;
-    align-items: center;
-    font-size: 1rem;
-    justify-content: space-between;
+    gap: 1.5rem;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    justify-content: flex-end;
 }
 
 .nav a {
     color: inherit;
     text-decoration: none;
     height: 100%;
-}
-
-.nav ul > li:last-child {
-    margin-left: auto;
+    margin-right: 1rem;
 }
 
 .nav li:active {
@@ -56,4 +54,18 @@ position: absolute;
 top: 0;
 left: 0;
 z-index: -1;
+}
+
+main {
+    display: flex;
+    flex: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(23, 20, 46, 0.712);
+    margin: 2.5%;
 }
