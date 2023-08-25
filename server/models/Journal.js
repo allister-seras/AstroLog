@@ -11,6 +11,11 @@ const journalSchema = new Schema(
             required: true,
             trim: true
         },
+        journalAuthor: {
+            type: String,
+            required: true,
+            trim: true,
+        },
         createdAt: {
             type: Date,
             default: Date.now,
@@ -28,7 +33,7 @@ const journalSchema = new Schema(
       }
 );
 
-const Journal = model('journal', journalSchema);
+const Journal = model('Journal', journalSchema);
 
 module.exports = Journal;
 
