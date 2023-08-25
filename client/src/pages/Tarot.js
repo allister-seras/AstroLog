@@ -52,7 +52,6 @@ const Tarot = () => {
     const tarotData = function(love, career, finance)  {
       // defining function
       const getResponse = (love, career, finance) => {
-        console.log(`${userID} ${apiKey}`);
         const url = "https://json.astrologyapi.com/v1/tarot_predictions";
         const auth = "Basic" + " " + btoa(userID + ":" + apiKey);
         axios.post(url, {
@@ -72,27 +71,6 @@ const Tarot = () => {
       };
       // calling function
       getResponse(love, career, finance);
-
-    
-  };
-  // calling tarot function (empty array so it runs once)
-  useEffect(() => {
-    tarotData(love, career, finance);
-  }, []);
-  // logging information to console only after state change
-  useEffect(() => {
-    console.log('');
-  }, [tarotRead]);
-
-    return (
-        <div>
-            <h1>Love</h1>
-              <p>{tarotRead.love}</p>
-            <h1>Career</h1>
-              <p>{tarotRead.career}</p>
-            <h1>Finance</h1>
-              <p>{tarotRead.finance}</p>
-            {/* save button */}
     };
 
     // conditional to check if all cards have been pulled
