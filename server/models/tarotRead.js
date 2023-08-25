@@ -1,4 +1,4 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const formatDate = require('../utils/formatDate.js');
 
 
@@ -22,4 +22,5 @@ const tarotReadSchema = new Schema(
     }
   );
 
+  const Tarot = model('Tarot', tarotReadSchema);
   module.exports = tarotReadSchema;
