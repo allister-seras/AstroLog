@@ -24,10 +24,13 @@ const resolvers = {
 
         },
     },
-        //   Mutation: {
-
-//   },
-// };
+          Mutation: {
+            // TODO addUser
+            // TODO login
+            // TODO horoscopeReading
+            // TODO tarotPrediction
+            // TODO jornalEntries
+  },
 };
     
 
