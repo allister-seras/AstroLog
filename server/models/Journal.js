@@ -1,7 +1,5 @@
 const { Schema, model } = require('mongoose');
 const formatDate = require('../utils/formatDate.js');
-const tarotReadSchema = require('./tarotRead.js');
-const horoscopeSchema = require('./Horoscope.js')
 
 const journalSchema = new Schema(
     {
@@ -21,8 +19,14 @@ const journalSchema = new Schema(
             default: Date.now,
             get: date => formatDate(date)
           },
-        savedHoroscope:[horoscopeSchema],
-        savedReading: [tarotReadSchema]
+        savedHoroscope: [{
+            type: Schema.Types.ObjectId, 
+            ref: 'Horoscope'
+        }],
+        savedTarot: [{
+          type: Schema.Types.ObjectId, 
+          ref: 'Tarot'
+        }]
     },
     {
         toJSON: {
