@@ -1,9 +1,5 @@
 const { Journal, tarotRead, User } = require('../models');
 
-// Query: {
-//     tech: async () => {
-// },
-//   },
 const resolvers = {
     Query: {
         users: async () => {
