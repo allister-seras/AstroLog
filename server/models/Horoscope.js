@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const horoscopeSchema = new Schema ({
-  reading: {
+  dailyReading: {
     type: String
   }
 })

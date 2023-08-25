@@ -7,17 +7,43 @@ const typeDefs = gql`
     src: String
   }
 
+  type Tarot {
+    reading: String!
+    createdAt: String
+  }
+
+  type Horoscope {
+    _id: ID
+    dailyReading: String
+  }
+
+  type Journal {
+    journalText: String!
+    createdAt: Int
+    savedHoroscope: [Horoscope]
+    savedReading: [Tarot]
+  }
+
   type Auth {
     token: ID!
     user: User
   }
 
-  type Horoscope {
-    reading: String
+  input TarotInput {
+    reading: String!
+    createdAt: String
+  }
+  
+  input HoroscopeInput {
+    id: Int
+    dailyReading: String
   }
 
-  input JournalEnteryInput {
-    
+  input JournalEntryInput {
+    journalText: String!
+    createdAt: Int
+    savedHoroscope: [HoroscopeInput]
+    savedReading: [TarotInput]
   }
 
   type Mutations {
@@ -25,7 +51,7 @@ const typeDefs = gql`
     login(email: String!, username: String, password: String!): Auth
     horoscopeReading(reading: String!): Horoscope
     tarotPredction(tarotId: Int, reading: String, createdAt: Int): Tarot
-    journalEnteries()
+    journalEnteries(input: JournalEntry): Journal
   }
 `;
 

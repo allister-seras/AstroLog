@@ -25,8 +25,8 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-        dailyHoroscope: [horoscopeSchema],
-        tarotPrediction: [tarotReadSchema]
+        dailyHoroscope: horoscopeSchema,
+        tarotPrediction: tarotReadSchema
     },
     {
         //virtual is not a property of the model but it will still be created as a field

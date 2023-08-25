@@ -23,4 +23,4 @@ const tarotReadSchema = new Schema(
   );
 
   const Tarot = model('Tarot', tarotReadSchema);
-  module.exports = tarotReadSchema;
+  module.exports = Tarot;
