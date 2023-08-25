@@ -2,6 +2,7 @@ import react, { useEfect, useEffect } from 'react'
 import { useQuery } from '@apollo/client';
 //import { QUERY_USER } from '../../../server/utils/queries';
 
+import '../App.css';
 import Cards from '../components/cards';
 
 const Home = () => {

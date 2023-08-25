@@ -9,6 +9,7 @@ import Horoscope from './pages/Horoscope';
 import Tarot from './pages/Tarot';
 import Header from './components/header';
 import Footer from './components/footer';
+import Particle from './components/particle';
 
 const client = new ApolloClient({
   uri: '/graphql',

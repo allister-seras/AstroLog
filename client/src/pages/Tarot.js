@@ -6,7 +6,7 @@ import Cards from '../components/cards';
 
 const Tarot = () => {
     // set initial form state
-    const [tarotRead, setTarotRead] = useState({ reading: ''});
+    const [tarotRead, setTarotRead] = useState({ love: '', career: '', finance: ''});
     // api info imported from dotenv
     const userID = process.env.REACT_APP_USER_ID;
     const apiKey = process.env.REACT_APP_API_KEY;
@@ -29,8 +29,10 @@ const Tarot = () => {
             Authorization: auth
           }
           }).then((response) => {
-          const reading = response.data;
-          setTarotRead(reading);
+          const loveReading = response.data.love;
+          const careerReading = response.data.career;
+          const financeReading = response.data.finance;
+          setTarotRead({love: loveReading, career: careerReading, finance: financeReading});
         });
       };
       // calling function
@@ -46,10 +48,14 @@ const Tarot = () => {
     console.log(tarotRead);
   }, [tarotRead]);
 
-
     return (
         <div>
-            <h1></h1>
+            <h1>Love</h1>
+            <p>{tarotRead.love}</p>
+            <h1>Career</h1>
+            <p>{tarotRead.career}</p>
+            <h1>Finance</h1>
+            <p>{tarotRead.finance}</p>
         </div>
     );
 };
