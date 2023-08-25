@@ -1,27 +1,29 @@
-import react, { useEfect, useEffect } from 'react'
+import react, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
+
 import Particle from './particle';
 import '../App.css';
 
-const Header = (props) => {
+const Header = () => {
 
   return (
       <nav className='nav'>
-          <a href='/' className='site-title'>AstroLog</a>
-          <ul>
+        <a href='/' className='site-title'>AstroLog</a>
+        <ul>
             <li >
-              <a href=''>Horoscope</a>
+              <a href='/horoscope'>Horoscope</a>
             </li>
             <li >
-              <a href=''>Tarot Reading</a>
+              <a href='/tarot'>Tarot Reading</a>
             </li>
             <li >
-              <a href=''>Journal Entries</a>
+              <a href='/home'>Journal Entries</a>
             </li>
             <li >
-              <a href=''>Log In</a>
+              <a href='/login'>Log In</a>
             </li>
           </ul>
-        <Particle className="particle-background"></Particle>
+      <Particle className="particle-background"></Particle>
       </nav>
   )
 }

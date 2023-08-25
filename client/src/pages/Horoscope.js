@@ -63,20 +63,21 @@ const Horoscope = () => {
       <section>
         <div>
           <h1>Prediction</h1>
-          <h3>Date: {horoscopeData.prediction_date}</h3>
-          <h2>Emotions</h2>
-          <p>{horoscopeData.prediction.emotions}</p>
-          <h2>Health</h2>
-          <p>{horoscopeData.prediction.health}</p>
-          <h2>Luck</h2>
-          <p>{horoscopeData.prediction.luck}</p>
-          <h2>Personal Life</h2>
-          <p>{horoscopeData.prediction.personal_life}</p>
-          <h2>Profession</h2>
-          <p>{horoscopeData.prediction.profession}</p>
-          <h2>Travel</h2>
-          <p>{horoscopeData.prediction.travel}</p>
+            <h3>Date: {horoscopeData.prediction_date}</h3>
+              <h2>Emotions</h2>
+                <p>{horoscopeData.prediction.emotions}</p>
+              <h2>Health</h2>
+                <p>{horoscopeData.prediction.health}</p>
+              <h2>Luck</h2>
+                <p>{horoscopeData.prediction.luck}</p>
+              <h2>Personal Life</h2>
+                <p>{horoscopeData.prediction.personal_life}</p>
+              <h2>Profession</h2>
+                <p>{horoscopeData.prediction.profession}</p>
+              <h2>Travel</h2>
+                <p>{horoscopeData.prediction.travel}</p>
         </div>
+        {/* save button */}
       </section>
     );
 };
