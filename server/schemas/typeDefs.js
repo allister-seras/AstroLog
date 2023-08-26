@@ -3,9 +3,18 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type User {
     _id: ID
-    username: String
-    zodiacname: String
+    username: String!
+    email: String!
+    zodiacName: String
+    timezone: Int
     journal: [Journal]
+    savedHoroscope: [Horoscope]
+    savedTarot: [Tarot]
+  }
+
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Card {
@@ -16,41 +25,36 @@ const typeDefs = gql`
 
   type Tarot {
     reading: String!
-    createdAt: String
+    createdAt: Int
   }
 
   type Horoscope {
-    _id: ID
-    dailyReading: String
+    predictionDate: String
+    prediction: String
   }
 
   type Journal {
-    journalText: String!
+    _id: ID
     createdAt: Int
-    savedHoroscope: [Horoscope]
-    savedReading: [Tarot]
+    journalAuthor: String!
+    journalText: String!
   }
 
-  type Auth {
-    token: ID!
-    user: User
-  }
-
-  input TarotInput {
+  input TarotReadInput {
     reading: String!
-    createdAt: String
+    createdAt: Int
   }
   
   input HoroscopeInput {
-    id: Int
-    dailyReading: String
+    predictionDate: String
+    prediction: String
   }
 
   input JournalEntryInput {
-    journalText: String!
+    _id: ID
     createdAt: Int
-    savedHoroscope: [HoroscopeInput]
-    savedReading: [TarotInput]
+    journalAuthor: String!
+    journalText: String!
   }
 
   type Query {
@@ -61,14 +65,17 @@ const typeDefs = gql`
     journals(username: String): [Journal]
   }
   
-  type Mutations {
-    addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, username: String, password: String!): Auth
-    horoscopeReading(reading: String!): Horoscope
-    tarotPredction(tarotId: Int, reading: String, createdAt: Int): Tarot
-    journalEntries(input: JournalEntryInput): Journal
+  type Mutation {
+    addUser(username: String!, email: String!, zodiacName: String!, timezone: Int!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    saveHoroscope(input: HoroscopeInput): Horoscope
+    saveTarotRead(input: TarotReadInput): Tarot
+    createJournalEntry(input: JournalEntryInput): Journal
+    removeJournalEntry(createdAt: Int): User
   }
 `;
 
 module.exports = typeDefs;
-// refer horoscope to user and tarotRead
+
+
+
