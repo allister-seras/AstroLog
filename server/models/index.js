@@ -1,7 +1,7 @@
-const Cards = require('./Cards');
+const Card = require('./Card');
 const Horoscope = require('./Horoscope');
 const User = require('./User');
 const Journal = require('./Journal');
-const Tarot = require('./tarotRead')
+const Tarot = require('./Tarot')
 
-module.exports = { Cards, Horoscope, User, Journal, Tarot };
+module.exports = { Card, Horoscope, User, Journal, Tarot };
