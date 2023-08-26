@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-//import { QUERY_USER } from '../utils/queries';
+import { SINGLE_USER } from '../utils/queries';
 
 import '../App.css';
 import TarotCard from '../components/TarotCard';
@@ -11,6 +11,9 @@ const Home = () => {
     var body = [{ text: "text", card: "card", tarot: "tarot", horoscope: "horoscope"},
     { text: "text", card: "card", tarot: "tarot", horoscope: "horoscope"}];
     
+    const { loading, data } = useQuery(SINGLE_USER);
+    const profiles = data?.profiles || [];
+
     return (
     <div>
         <h1>Welcome to AstroLog</h1>
