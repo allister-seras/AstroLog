@@ -1,4 +1,4 @@
-const { Journal, tarotRead, User, Cards } = require('../models');
+const { Journal, tarotRead, User, Cards, Horoscope } = require('../models');
 
 const resolvers = {
     Query: {
@@ -26,8 +26,45 @@ const resolvers = {
     },
           Mutation: {
             // TODO addUser
+            addUser: async (parent, { username, email, password }) => {
+              const user = await User.create({ username, email, password });
+              const token = signToken(user);
+              return { token, user };
+            },
             // TODO login
+            login: async (parent, { email, password }) => {
+              const user = await User.findOne({ email });
+        
+              if (!user) {
+                throw new AuthenticationError('No user found with this email address');
+              }
+        
+              const correctPw = await user.isCorrectPassword(password);
+        
+              if (!correctPw) {
+                throw new AuthenticationError('Incorrect credentials');
+              }
+        
+              const token = signToken(user);
+        
+              return { token, user };
+            },
             // TODO horoscopeReading
+            horoscopeReading: async (parent, { prediction }, context) => {
+              if (context.user) {
+                const reading = await Horoscope.create({
+                  prediction: context.user.dailyHoroscope,
+                });
+        
+                await User.findOneAndUpdate(
+                  { _id: context.user._id },
+                  { $addToSet: { dailyHoroscope: reading._id } }
+                );
+        
+                return dailyHoroscope;
+              }
+              throw new AuthenticationError('You need to be logged in!');
+            },
             // TODO tarotPrediction
             // TODO jornalEntries
   },
