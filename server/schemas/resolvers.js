@@ -6,12 +6,12 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user_id }).populate('journals');
+                return User.findOne({ _id: context.user_id })
             }
             throw new AuthenticationError('You need to be logged in!');
         },
         user: async (parent, { username }) => {
-          return User.findOne({ username }).populate('journals');
+          return User.findOne({ username });
         },
         users: async (parent, args) => {
             return User.find({});
