@@ -1,20 +1,59 @@
-import react, {useEffect, useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import Auth from '../utils/auth';
 import newUser from './newUser';
 
-const login = () => {
-    // const handleLogin = () => {
-        
-    // }
+// TODO add user api function
+const Login = () => {
+    // form data
+    const [formState, setFormState] = useState({ email: '', password: '' });
+    // const [login, { error, data }] = useMutation(LOGIN_USER);
+  
+    // update state based on form input changes
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
+    // will use login api call than set token to local storage
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        console.log(formState);
+        // try {
+        //   const { data } = await login({
+        //     variables: { ...formState },
+        //   });
+    
+        //   Auth.login(data.login.token);
+        // } catch (e) {
+        //   console.error(e);
+        // }
+    
+        // clear form values
+        setFormState({
+          email: '',
+          password: '',
+        });
+    }
+
+    // set the page to home if user is logged in
+    useEffect(() => {
+        if ( Auth.getToken()) {
+            window.location.assign('/home');
+        }
+     });
 
     return (
         <div>
             <form>
-                <input type='Username' id='userName' name='userName'/>
-                <input type='Email' id='email' name='email'/>
-                <input type='Password' id='passWord' name='passWord'/>
-                <input type='submit' value='login'/>
+                <input onChange={handleChange} type='Email' id='email' name='email'/>
+                <input onChange={handleChange} type='Password' id='password' name='password'/>
+                <input onClick={handleLogin} type='submit' value='login'/>
             </form>
             <div>
                 <form>
@@ -27,4 +66,4 @@ const login = () => {
     );
 }
 
-export default login;
+export default Login;
