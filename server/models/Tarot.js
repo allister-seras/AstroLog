@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const formatDate = require('../utils/formatDate.js');
+const formatDateFunction = require('../utils/formatDate.js');
 
 
 const tarotReadSchema = new Schema(
@@ -11,7 +11,7 @@ const tarotReadSchema = new Schema(
       createdAt: {
         type: Date,
         default: Date.now,
-        get: date => formatDate(date)
+        get: date => formatDateFunction(date)
       },
     },
     {

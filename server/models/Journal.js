@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const formatDate = require('../utils/formatDate.js');
+const formatDateFunction = require('../utils/formatDate.js');
 
 const journalSchema = new Schema(
     {
@@ -17,23 +17,15 @@ const journalSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: date => formatDate(date)
-          },
-        savedHoroscope: [{
-            type: Schema.Types.ObjectId, 
-            ref: 'Horoscope'
-        }],
-        savedTarot: [{
-          type: Schema.Types.ObjectId, 
-          ref: 'Tarot'
-        }]
+            get: date => formatDateFunction(date)
+          }
     },
     {
         toJSON: {
           virtuals: true,
           getters: true
         },
-        id: false,
+        id: true,
       }
 );
 
