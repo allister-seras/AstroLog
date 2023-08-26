@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const cardsSchema = new Schema(
+const cardSchema = new Schema(
   {
     tarotId: {
       type: Number
@@ -20,6 +20,6 @@ const cardsSchema = new Schema(
   }
 );
 
-const Cards = model('Cards', cardsSchema)
+const Card = model('Cards', cardSchema)
 
-module.exports = Cards
+module.exports = Card

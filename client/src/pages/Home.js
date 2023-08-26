@@ -3,7 +3,8 @@ import { useQuery } from '@apollo/client';
 //import { QUERY_USER } from '../utils/queries';
 
 import '../App.css';
-import Cards from '../components/cards';
+import TarotCard from '../components/TarotCard';
+import HoroscopeCard from '../components/horoscopeCard'
 
 const Home = () => {
     //TODO Fetch user data
@@ -12,21 +13,28 @@ const Home = () => {
     
     return (
     <div>
-        {/* user welcome */}
         <h1>Welcome to AstroLog</h1>
         <h2>Let The Stars Guide Your Story</h2>
         <div>
+            <h2>horoscope</h2>
             {body.map((section, index) => {
-                return <Cards 
+                return <HoroscopeCard 
                     key={index}
                     text={section.text}
-                    card={section.card}
-                    tarot={section.tarot}
                     horoscope={section.horoscope}
                     />
             })}
         </div>
-        {/*add new button*/}
+        <div>
+            <h2>tarot</h2>
+            {body.map((section, index) => {
+                return <TarotCard
+                    key={index}
+                    card={section.card}
+                    tarot={section.tarot}
+                />
+            })}
+        </div>
     </div>
     );
 }
