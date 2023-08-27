@@ -2,6 +2,12 @@ import react, { useEffect, useState } from 'react'
 import { useQuery } from '@apollo/client';
 import axios from "axios";
 
+import HoroscopeCard from '../components/horoscopeCard'
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 const Horoscope = () => {
     // set initial form state
     const [horoscopeData, setHoroscopeData] = useState({ prediction_date: '', prediction: {
@@ -64,25 +70,18 @@ const Horoscope = () => {
     
 
     return (
-      <section>
-        <div>
-          <h1>Prediction</h1>
-            <h3>Date: {horoscopeData.prediction_date}</h3>
-              <h2>Emotions</h2>
-                <p>{horoscopeData.prediction.emotions}</p>
-              <h2>Health</h2>
-                <p>{horoscopeData.prediction.health}</p>
-              <h2>Luck</h2>
-                <p>{horoscopeData.prediction.luck}</p>
-              <h2>Personal Life</h2>
-                <p>{horoscopeData.prediction.personal_life}</p>
-              <h2>Profession</h2>
-                <p>{horoscopeData.prediction.profession}</p>
-              <h2>Travel</h2>
-                <p>{horoscopeData.prediction.travel}</p>
-        </div>
-        {/* save button */}
-      </section>
+        <main>
+          <h1>{capitalizeFirstLetter(zodiacName)}'s Fortune</h1>
+            <h3>For {horoscopeData.prediction_date}</h3>
+              <section className='horoCard'>
+            <HoroscopeCard title="Emotions" content={horoscopeData.prediction.emotions} />
+            <HoroscopeCard title="Health" content={horoscopeData.prediction.health} />
+            <HoroscopeCard title="Luck" content={horoscopeData.prediction.luck} />
+            <HoroscopeCard title="Personal Life" content={horoscopeData.prediction.personal_life} />
+            <HoroscopeCard title="Profession" content={horoscopeData.prediction.profession} />
+            <HoroscopeCard title="Travel" content={horoscopeData.prediction.travel} />
+            </section>
+        </main>
     );
 };
 
