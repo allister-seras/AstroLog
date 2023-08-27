@@ -89,16 +89,20 @@ const resolvers = {
               }
               throw new AuthenticationError('You need to be logged in!');
         },
-        saveTarotRead: async (parent, { TarotReadInput }, context) => {
+        saveTarotRead: async (parent, args) => {
+          const savedTarot = await Tarot.create(args);
+          return savedTarot;
+          /*
               if (context.user) {
-                await User.findOneAndUpdate(
+                
+                const user = await User.findOneAndUpdate(
                   { _id: context.user._id },
                   { $addToSet: { savedBooks: BookInput } }
                 );
-        
-                return context.user;
+                return {savedTarot, user};
               }
               throw new AuthenticationError('You need to be logged in!');
+              */
         },
         removeJournalEntry: async (parent, { createdAt }, context) => {
               if (context.user) {
