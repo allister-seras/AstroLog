@@ -10,7 +10,7 @@ const Login = () => {
     // form data
     const [formState, setFormState] = useState({ email: '', password: '' });
     // const [login, { error, data }] = useMutation(LOGIN_USER);
-    const [ loginUser, {error} ] = useMutation(LOGIN_USER);
+    const [ loginUser, { error, data } ] = useMutation(LOGIN_USER);
     // update state based on form input changes
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -52,10 +52,11 @@ const Login = () => {
 
     return (
         <div>
-            <form>
-                <input onChange={handleChange} type='Email' id='email' name='email'/>
-                <input onChange={handleChange} type='Password' id='password' name='password'/>
-                <input onClick={handleLogin} type='submit' value='login'/>
+            <form onSubmit={handleLogin} >
+                <input onChange={handleChange} type='email' id='email' name='email' value={formState.email}/>
+                <input onChange={handleChange} type='password' id='password' name='password' value={formState.password}/>
+                <button type='submit' value='login'
+                  style={{ cursor: 'pointer' }}> Submit </button>
             </form>
             <div>
                 <form>

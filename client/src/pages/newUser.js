@@ -11,11 +11,11 @@ const login = () => {
     return (
         <div>
             <form>
-                <input type='Username' id='userName' name='userName'/>
-                <input type='Email' id='email' name='email'/>
-                <input type='Password' id='passWord' name='passWord'/>
-                <input type='text' id='zodiac' name='Zodiac Sign'/>
-                <input type='float' id='timeZone' name='Time Zone'/>
+                <input type='username' id='userName' name='username'/>
+                <input type='email' id='email' name='email'/>
+                <input type='password' id='passWord' name='password'/>
+                <input type='zodiacName' id='zodiac' name='zodiacName'/>
+                <input type='float' id='timeZone' name='timezone'/>
                 <input type='submit' value='login'/>
             </form>
         </div>
