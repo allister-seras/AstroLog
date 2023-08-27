@@ -1,9 +1,12 @@
 * {
     box-sizing: border-box;
+    
 }
 
 body {
     margin: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .nav {
@@ -62,10 +65,13 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    border: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgba(23, 20, 46, 0.712);
+    background-color: rgba(23, 20, 46, 0.8);
+    color:aliceblue;
     margin: 2.5%;
+}
+
+.horoCard  {
+    width: 100%;
 }

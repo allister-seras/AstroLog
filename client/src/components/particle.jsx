@@ -77,7 +77,7 @@ function Particle(){
                     },
                     "move": {
                         "enable": true,
-                        "speed": 2,
+                        "speed": .5,
                         "direction": "none",
                         "random": false,
                         "straight": false,
@@ -113,7 +113,7 @@ function Particle(){
                             "size": 40,
                             "duration": 2,
                             "opacity": 1,
-                            "speed": 3
+                            "speed": 2
                         },
                         "repulse": {
                             "distance": 100
