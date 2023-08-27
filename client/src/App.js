@@ -36,7 +36,7 @@ function App() {
               element={<NewUser/>}
             />
             <Route 
-              path="/home" 
+              path="/" 
               element={<Home />}
             />
             <Route
