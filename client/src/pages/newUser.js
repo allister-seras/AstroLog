@@ -8,26 +8,31 @@ const NewUser = () => {
     // set initial form state
     const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '', zodiacName: '', timezone: '' });
     const [ addUser, {error} ] = useMutation(ADD_USER);
-    console.log(userFormData);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
-      };
+    };
+
+    const handleTimezone = (event) => {
+        const { name, value } = event.target;
+        const timezoneFloat = parseFloat(value);
+        setUserFormData({ ...userFormData, [name]: timezoneFloat})
+    };
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
+        
         try {
-        const response = await addUser({
+        const {data} = await addUser({
             variables: { ...userFormData },
         });
-        console.log(response.data.addUser.user);
-        Auth.login(response.data.addUser.token);
+        console.log(data);
+        Auth.login(data.addUser.token);
         } catch (err) {
         console.error(err);
         }
-
+        
         setUserFormData({
         username: '',
         email: '',
@@ -35,6 +40,7 @@ const NewUser = () => {
         zodiacName: '',
         timezone: '' 
         });
+        
     };
 
     const zodiacArray = [
@@ -383,7 +389,7 @@ const NewUser = () => {
                     ))}
                 </select>
                 <label htmlFor="timezone">Time Zone</label>
-                <select defaultValue={'DEFAULT'} id='timezone' name='timezone' onChange={handleInputChange}>
+                <select defaultValue={'DEFAULT'} id='timezone' name='timezone' onChange={handleTimezone}>
                     <option value="DEFAULT" disabled>-- select your timezone --</option>
                     {timezonesArray.map((element, index) => ( 
                     <option key={index} value={element.value}>{element.name}</option>
