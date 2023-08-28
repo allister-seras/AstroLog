@@ -39,3 +39,12 @@ export const SAVE_TAROT = gql`
         }
     }
 `;
+
+export const SAVE_HOROSCOPE = gql`
+    mutation SaveHoroscope($input: HoroscopeInput) {
+        saveHoroscope(input: $input) {
+        predictionDate
+        prediction
+        }
+    }
+`;

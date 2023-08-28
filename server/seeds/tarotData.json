@@ -388,5 +388,10 @@
     "tarotId": 78,	
     "tarotName": "THE WORLD",
     "src": "../../client/public/assets/images/tarotcards/21-TheWorld.jpg"
+  },
+  {
+    "tarotId": 79,	
+    "tarotName": "CARD BACK",
+    "src": "../../client/public/assets/images/tarotcards/21-CardBacks.jpg"
   }
 ]

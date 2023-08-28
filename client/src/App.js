@@ -12,6 +12,7 @@ import Horoscope from './pages/Horoscope';
 import Tarot from './pages/Tarot';
 import Header from './components/header';
 import Footer from './components/footer';
+import { UserProvider } from './utils/UserContext';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -41,6 +42,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Header />
+      <UserProvider>
       <Router>
         <main className="flex-column justify-center align-center min-100-vh">
           <Routes>
@@ -55,19 +57,20 @@ function App() {
             <Route 
               path="/" 
               element={<Home />}
-            />
-            <Route
-              path="/horoscope"
-              element={<Horoscope/>}
-            />
+            />    
             <Route
               path="/tarot"
               element={<Tarot/>}
+            />
+            <Route
+                    path="/horoscope"
+                    element={<Horoscope />}
             />
             {/* Add routes for the other pages */}
           </Routes>
         </main>
       </Router>
+      </UserProvider>
     <Footer />
     </ApolloProvider>
   );
