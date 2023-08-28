@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import { useMutation } from '@apollo/client';
-// import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { SAVE_TAROT } from '../utils/mutations';
-// import { QUERY_CARD } from '../utils/queries';
+import { QUERY_CARD } from '../utils/queries';
+import TarotCard from '../components/TarotCard';
 
 const Tarot = () => {
     // set initial state of tarot cards
@@ -15,9 +16,6 @@ const Tarot = () => {
 
     // saveTarotRead function
     const [ saveTarot, {error} ] = useMutation(SAVE_TAROT);
-
-    // get card artwork (having issues making this work currently)
-    // const [ queryCard, {error} ] = useQuery(QUERY_CARD);
 
 
     // api info imported from dotenv
@@ -168,10 +166,13 @@ const Tarot = () => {
         // if generate reading button has been clicked, render this
         <div>
           <h1>Love</h1>
+          <TarotCard id={love}/>
           <p>{tarotRead.love}</p>
           <h1>Career</h1>
+          <TarotCard id={career}/>
           <p>{tarotRead.career}</p>
           <h1>Finance</h1>
+          <TarotCard id={finance}/>
           <p>{tarotRead.finance}</p>
           <button onClick={resetFunction}>Reset</button>
         </div>
