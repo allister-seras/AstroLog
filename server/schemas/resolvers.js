@@ -75,8 +75,10 @@ const resolvers = {
               // If user attempts to execute this mutation and isn't logged in, throw an error
               throw new AuthenticationError('You need to be logged in!');
         },
-        saveHoroscope: async (parent, { HoroscopeInput }, context) => {
-              if (context.user) {
+        saveHoroscope: async (parent, args, context) => {
+            const savedHoroscope = await Horoscope.create(args);
+            return savedHoroscope;
+            /*   if (context.user) {
                 await User.findOneAndUpdate(
                   { _id: context.user._id },
                   { $addToSet: { journals: {
@@ -89,6 +91,7 @@ const resolvers = {
                 return context.user;
               }
               throw new AuthenticationError('You need to be logged in!');
+            */
         },
         saveTarotRead: async (parent, args) => {
           const savedTarot = await Tarot.create(args);
