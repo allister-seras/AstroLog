@@ -1,6 +1,7 @@
 import react, { useEffect, useState } from 'react'
 import { useQuery } from '@apollo/client';
 import axios from "axios";
+import { QUERY_ME } from '../utils/queries';
 
 import HoroscopeCard from '../components/horoscopeCard'
 
@@ -18,6 +19,14 @@ const Horoscope = () => {
       profession: '',
       travel: ''
     } });
+
+    // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
+    const { loading, data } = useQuery(QUERY_ME);
+    if ( data !== undefined) {
+      console.log(data.me.timezone);
+      console.log(data.me.zodiacName);
+    };
+    
 
     // api info imported from dotenv
     const userID = process.env.REACT_APP_USER_ID;
