@@ -6,7 +6,7 @@ const TarotCard = (props) => {
     const [cardInfo, setCardInfo] = useState({name: '', src: '', id: ''})
     const tarotId = props.id;
     
-    // get card artwork (having issues making this work currently)
+    // get card artwork
     const { data } = useQuery(QUERY_CARD, {
         variables: { tarotId },
     });

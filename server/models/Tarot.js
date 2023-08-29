@@ -6,7 +6,6 @@ const tarotReadSchema = new Schema(
     {
       reading: {
         type: String,
-        required: true,
       },
       createdAt: {
         type: Date,

@@ -7,15 +7,9 @@ const resolvers = {
         // By adding context to our query, we can retrieve the logged in user without specifically searching for them
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user_id }).populate('')
+                return User.findOne({ _id: context.user._id });
             }
             throw new AuthenticationError('You need to be logged in!');
-        },
-        user: async (parent, { username }) => {
-          return User.findOne({ username });
-        },
-        users: async (parent, args) => {
-            return User.find({});
         },
         tarotCard: async (parent, { tarotId }) => {
             return Card.findOne({ tarotId: tarotId });
@@ -64,7 +58,7 @@ const resolvers = {
                 return User.findOneAndUpdate(
                   { _id: context.user._id },
                   {
-                    $addToSet: { journals: JournalEntryInput },
+                    $addToSet: [{ journals: JournalEntryInput }],
                   },
                   {
                     new: true,
@@ -76,49 +70,37 @@ const resolvers = {
               throw new AuthenticationError('You need to be logged in!');
         },
         saveHoroscope: async (parent, args, context) => {
-            const savedHoroscope = await Horoscope.create(args);
-            return savedHoroscope;
-            /*   if (context.user) {
-                await User.findOneAndUpdate(
-                  { _id: context.user._id },
-                  { $addToSet: { journals: {
-                      savedHoroscope: HoroscopeInput
-                      } 
-                    } 
-                  }
-                );
-        
-                return context.user;
-              }
-              throw new AuthenticationError('You need to be logged in!');
-            */
+            if (context.user) {
+              const savedHoroscope = await Horoscope.create(args);
+              const user = User.findOneAndUpdate(
+                { _id: context.user._id },
+                { 
+                  $addToSet: { savedHoroscope: savedHoroscope } 
+                },
+                {
+                  new: true,
+                }
+              );
+              return savedHoroscope, user;
+            }
+            throw new AuthenticationError('You need to be logged in!');
         },
-        saveTarotRead: async (parent, args) => {
-          const savedTarot = await Tarot.create(args);
-          return savedTarot;
-          /*
-              if (context.user) {
-                
+        saveTarotRead: async (parent, args, context) => {
+            if (context.user) {
+                const savedTarot = await Tarot.create(args);
                 const user = await User.findOneAndUpdate(
                   { _id: context.user._id },
-                  { $addToSet: { savedBooks: BookInput } }
-                );
-                return {savedTarot, user};
-              }
+                  { 
+                    $addToSet: { savedTarot: savedTarot } 
+                  },
+                  {
+                    new: true,
+                  }
+                )
+                return savedTarot, user;
+              };
               throw new AuthenticationError('You need to be logged in!');
-              */
         },
-        removeJournalEntry: async (parent, { createdAt }, context) => {
-              if (context.user) {
-                await User.findOneAndUpdate(
-                  { _id: context.user._id },
-                  { $pull: { journals: createdAt } }
-                );
-        
-                return context.user;
-              }
-              throw new AuthenticationError('You need to be logged in!');
-        }
     },
 };
 

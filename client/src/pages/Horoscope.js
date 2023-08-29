@@ -72,10 +72,15 @@ const Horoscope = () => {
       }
       event.target.style.display = "none";
       dailyHoroData(zodiacName, timezone);;
+      
+    };
+
+    const saveFunction = async function() {
+      console.log(horoscopeData.prediction);
       try {
-        const stringifiedData = JSON.stringify({...horoscopeData});
+        const prediction = JSON.stringify(horoscopeData.prediction);
         const { data } = await saveHoroscope({
-          variables: stringifiedData,
+          variables: {prediction: prediction}
         });
         console.log(data);
       } catch (e) {
@@ -109,6 +114,7 @@ const Horoscope = () => {
     useEffect(() => {
       if (data !== undefined) {
         const {me} = data;
+        console.log(me.savedHoroscope);
         setUserInfo({zodiacName: me.zodiacName, timezone: me.timezone});
       }
     }, [data]);
@@ -140,6 +146,7 @@ const Horoscope = () => {
             <HoroscopeCard title="Profession" content={horoscopeData.prediction.profession} />
             <HoroscopeCard title="Travel" content={horoscopeData.prediction.travel} />
             </section>
+            <button onClick={saveFunction}>Save</button>
             <button onClick={resetFunction}>Reset</button>
         </main>
         ) : (

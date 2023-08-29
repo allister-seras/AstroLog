@@ -8,6 +8,7 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
+    "delete": "cd server && npm run delete",
     "build": "cd client && npm run build",
     "api-test": "cd client/src/utils/api && node index.js"
   },
