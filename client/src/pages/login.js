@@ -49,7 +49,7 @@ const Login = () => {
     // set the page to home if user is logged in
     useEffect(() => {
         if ( Auth.getToken()) {
-            window.location.assign('/home');
+            window.location.assign('/');
         }
      });
 
