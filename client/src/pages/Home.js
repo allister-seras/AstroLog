@@ -39,7 +39,6 @@ const Home = () => {
         return (<h1>Please login!</h1>)
     }
 
-
     return (
     <div>
         <h1>Welcome to AstroLog</h1>

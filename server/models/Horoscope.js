@@ -1,9 +1,12 @@
 const { Schema, model } = require('mongoose');
+const formatDateFunction = require('../utils/formatDate.js');
 
 const horoscopeSchema = new Schema (
   {
   predictionDate: {
-    type: String
+    type: Date,
+    default: Date.now,
+    get: date => formatDateFunction(date)
   },
   prediction: {
     type: String
@@ -21,4 +24,4 @@ const Horoscope = model('Horoscope', horoscopeSchema)
 
 module.exports = Horoscope
 
-// predictionDate from API DD-M-YYYY
+// predictionDate from API DD-M-YYYY = done!
