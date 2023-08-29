@@ -146,12 +146,12 @@ const Tarot = () => {
             <h1>Card Selection</h1>
             <p>Click the buttons below to select tarot cards for each category. Once all three have been selected we will display your reading!</p>
             <div>
-              <button id="love" onClick={handleCardPull}>
+              <button id="love" name='love' onClick={handleCardPull}>
                 Love
               </button>
             </div>
             <div>
-              <button id="career" onClick={handleCardPull}>
+              <button id="career" name='career' onClick={handleCardPull}>
                 Career
               </button>
             </div>
