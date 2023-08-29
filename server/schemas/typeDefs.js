@@ -25,7 +25,7 @@ const typeDefs = gql`
 
   type Tarot {
     reading: String!
-    createdAt: Int
+    createdAt: String
   }
 
   type Horoscope {
@@ -35,16 +35,11 @@ const typeDefs = gql`
 
   type Journal {
     _id: ID
-    createdAt: Int
+    createdAt: String
     journalAuthor: String!
     journalText: String!
   }
 
-  input TarotReadInput {
-    reading: String!
-    createdAt: Int
-  }
-  
   input HoroscopeInput {
     predictionDate: String
     prediction: String
@@ -52,7 +47,7 @@ const typeDefs = gql`
 
   input JournalEntryInput {
     _id: ID
-    createdAt: Int
+    createdAt: String
     journalAuthor: String!
     journalText: String!
   }
@@ -69,7 +64,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, zodiacName: String!, timezone: Int!, password: String!): Auth
     login(email: String!, password: String!): Auth
     saveHoroscope(input: HoroscopeInput): Horoscope
-    saveTarotRead(input: TarotReadInput): Tarot
+    saveTarotRead(reading: String!): Tarot
     createJournalEntry(input: JournalEntryInput): Journal
     removeJournalEntry(createdAt: Int): User
   }

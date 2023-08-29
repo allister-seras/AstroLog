@@ -30,3 +30,12 @@ export const LOGIN_USER = gql`
         }
     }
 `;
+
+export const SAVE_TAROT = gql`
+    mutation saveTarot($reading: String!) {
+        saveTarotRead(reading: $reading) {
+        reading
+        createdAt
+        }
+    }
+`;
