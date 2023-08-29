@@ -1,40 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-//import { QUERY_USER } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 
 import '../App.css';
 import TarotCard from '../components/TarotCard';
 import HoroscopeCard from '../components/horoscopeCard'
+import Journal from '../components/journal';
 
 const Home = () => {
-    //TODO Fetch user data
-    var body = [{ text: "text", card: "card", tarot: "tarot", horoscope: "horoscope"},
-    { text: "text", card: "card", tarot: "tarot", horoscope: "horoscope"}];
-    
+    //const {loading, error, data} = useQuery(QUERY_ME);
+
+    // TODO finish
+    const newEntry = (event) => {
+        event.preventDefault();
+        // tab to create new entry
+    }
+
+    const loading = false;
+    const error = false;
+    const data = [{
+        date: "1/1/1900",
+        entry: "Lorum ipsum ladmordious inmegous",
+        tarot: "tarot",
+        prediction: "stuff"
+    },
+    {
+        date: "1/1/1900",
+        entry: "Lorum ipsum ladmordious inmegous",
+        tarot: "tarot",
+        prediction: "stuff"
+    }];
+
+    if (loading) {
+        <h1>Loading...</h1>
+    }
+
+    if (error) {
+        return (<h1>Please login!</h1>)
+    }
+
+
     return (
     <div>
         <h1>Welcome to AstroLog</h1>
         <h2>Let The Stars Guide Your Story</h2>
         <div>
-            <h2>horoscope</h2>
-            {body.map((section, index) => {
-                return <HoroscopeCard 
+            {data.map((section, index) => {
+                return( <Journal
                     key={index}
-                    text={section.text}
-                    horoscope={section.horoscope}
-                    />
+                    date={section?.date}
+                    entry={section?.entry}
+                    tarot={section?.tarot}
+                    prediction={section?.prediction}
+                />)
             })}
         </div>
-        <div>
-            <h2>tarot</h2>
-            {body.map((section, index) => {
-                return <TarotCard
-                    key={index}
-                    card={section.card}
-                    tarot={section.tarot}
-                />
-            })}
-        </div>
+
+        <button onClick={newEntry}></button>
     </div>
     );
 }
