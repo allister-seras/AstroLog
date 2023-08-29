@@ -30,7 +30,7 @@ class AuthService {
   // sets token to local storage and sends user to home 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/home');
+    window.location.assign('/');
   }
 
   // removes token from local storage

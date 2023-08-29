@@ -10,54 +10,28 @@ export const QUERY_CARD = gql`
   }
 `;
 
-export const SINGLE_USER = gql`
-  query querySingleUser($username: String!) {
-    user(username: $username) {
-      _id
-      username
-      email
-      zodiacName
-      timezone
-      journal {
-        _id
-        createdAt
-        journalAuthor
-        journalText
-        }
-      savedHoroscope {
-        predictionDate
-        prediction
-        }
-      savedTarot {
-        reading
-        createdAt
-        }
-      }
-  }
-`;
-
 export const QUERY_ME = gql`
-  query queryMe($username: String!) {
-    user(username: $username) {
-      _id
-      username
-      email
-      zodiacName
-      timezone
-      journal {
+    query Me {
+      me {
         _id
-        createdAt
-        journalAuthor
-        journalText
+        username
+        email
+        zodiacName
+        timezone
+        journal {
+          _id
+          createdAt
+          journalAuthor
+          journalText
         }
-      savedHoroscope {
-        predictionDate
-        prediction
+        savedHoroscope {
+          predictionDate
+          prediction
         }
-      savedTarot {
-        reading
-        createdAt
+        savedTarot {
+          reading
+          createdAt
         }
       }
-  }
+    }
 `;

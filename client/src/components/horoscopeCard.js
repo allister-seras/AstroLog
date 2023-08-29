@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
+import {Accordion} from 'react-bootstrap';
 
-const HoroscopeCard = (props) => {
+const HoroscopeCard = ({ title, content }) => {
     return (
-    <div>
-        <div>
-            <h3>{ props.horoscope }</h3>
-            <p>{ props.text }</p>
-        </div>
-        {/* remove button*/}
-    </div>
+      <Accordion defaultActiveKey={['0']} alwaysOpen flush>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>{title}</Accordion.Header>
+          <Accordion.Body>
+            {content}
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
     );
-}
+  }
 
 export default HoroscopeCard;

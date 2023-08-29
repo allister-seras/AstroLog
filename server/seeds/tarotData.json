@@ -2,391 +2,396 @@
   {
     "tarotId": 1,	
     "tarotName": "KING OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands14.jpg"
+    "src": "./assets/images/tarotcards/Wands14.jpg"
   },
   {
     "tarotId": 2,	
     "tarotName": "QUEEN OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands13.jpg"
+    "src": "./assets/images/tarotcards/Wands13.jpg"
   },
   {
     "tarotId": 3,	
     "tarotName": "KNIGHT OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands12.jpg"
+    "src": "./assets/images/tarotcards/Wands12.jpg"
   },
   {
     "tarotId": 4,	
     "tarotName": "PAGE OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands11.jpg"
+    "src": "./assets/images/tarotcards/Wands11.jpg"
   },
   {
     "tarotId": 5,	
     "tarotName": "TEN OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands10.jpg"
+    "src": "./assets/images/tarotcards/Wands10.jpg"
   },
   {
     "tarotId": 6,	
     "tarotName": "NINE OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands09.jpg"
+    "src": "./assets/images/tarotcards/Wands09.jpg"
   },
   {
     "tarotId": 7,	
     "tarotName": "EIGHT OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands08.jpg"
+    "src": "./assets/images/tarotcards/Wands08.jpg"
   },
   {
     "tarotId": 8,	
     "tarotName": "SEVEN OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands07.jpg"
+    "src": "./assets/images/tarotcards/Wands07.jpg"
   },
   {
     "tarotId": 9,	
     "tarotName": "SIX OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands06.jpg"
+    "src": "./assets/images/tarotcards/Wands06.jpg"
   },
   {
     "tarotId": 10,	
     "tarotName": "FIVE OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands05.jpg"
+    "src": "./assets/images/tarotcards/Wands05.jpg"
   },
   {
     "tarotId": 11,	
     "tarotName": "FOUR OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands04.jpg"
+    "src": "./assets/images/tarotcards/Wands04.jpg"
   },
   {
     "tarotId": 12,	
     "tarotName": "THREE OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands03.jpg"
+    "src": "./assets/images/tarotcards/Wands03.jpg"
   },
   {
     "tarotId": 13,	
     "tarotName": "TWO OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands02.jpg"
+    "src": "./assets/images/tarotcards/Wands02.jpg"
   },
   {
     "tarotId": 14,	
     "tarotName": "ACE OF WANDS",
-    "src": "../../client/public/assets/images/tarotcards/Wands01.jpg"
+    "src": "./assets/images/tarotcards/Wands01.jpg"
   },
   {
     "tarotId": 15,	
     "tarotName": "KING OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords14.jpg"
+    "src": "./assets/images/tarotcards/Swords14.jpg"
   },
   {
     "tarotId": 16,	
     "tarotName": "QUEEN OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords13.jpg"
+    "src": "./assets/images/tarotcards/Swords13.jpg"
   },
   {
     "tarotId": 17,	
     "tarotName": "KNIGHT OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords12.jpg"
+    "src": "./assets/images/tarotcards/Swords12.jpg"
   },
   {
     "tarotId": 18,	
     "tarotName": "PAGE OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords11.jpg"
+    "src": "./assets/images/tarotcards/Swords11.jpg"
   },
   {
     "tarotId": 19,	
     "tarotName": "TEN OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords10.jpg"
+    "src": "./assets/images/tarotcards/Swords10.jpg"
   },
   {
     "tarotId": 20,	
     "tarotName": "NINE OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords09.jpg"
+    "src": "./assets/images/tarotcards/Swords09.jpg"
   },
   {
     "tarotId": 21,	
     "tarotName": "EIGHT OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords08.jpg"
+    "src": "./assets/images/tarotcards/Swords08.jpg"
   },
   {
     "tarotId": 22,	
     "tarotName": "SEVEN OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords07.jpg"
+    "src": "./assets/images/tarotcards/Swords07.jpg"
   },
   {
     "tarotId": 23,	
     "tarotName": "SIX OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords06.jpg"
+    "src": "./assets/images/tarotcards/Swords06.jpg"
   },
   {
     "tarotId": 24,	
     "tarotName": "FIVE OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords05.jpg"
+    "src": "./assets/images/tarotcards/Swords05.jpg"
   },
   {
     "tarotId": 25,	
     "tarotName": "FOUR OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords04.jpg"
+    "src": "./assets/images/tarotcards/Swords04.jpg"
   },
   {
     "tarotId": 26,	
     "tarotName": "THREE OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords03.jpg"
+    "src": "./assets/images/tarotcards/Swords03.jpg"
   },
   {
     "tarotId": 27,	
     "tarotName": "TWO OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords02.jpg"
+    "src": "./assets/images/tarotcards/Swords02.jpg"
   },
   {
     "tarotId": 28,	
     "tarotName": "ACE OF SWORDS",
-    "src": "../../client/public/assets/images/tarotcards/Swords01.jpg"
+    "src": "./assets/images/tarotcards/Swords01.jpg"
   },
   {
     "tarotId": 29,	
     "tarotName": "KING OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups14.jpg"
+    "src": "./assets/images/tarotcards/Cups14.jpg"
   },
   {
     "tarotId": 30,	
     "tarotName": "QUEEN OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups13.jpg"
+    "src": "./assets/images/tarotcards/Cups13.jpg"
   },
   {
     "tarotId": 31,	
     "tarotName": "KNIGHT OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups12.jpg"
+    "src": "./assets/images/tarotcards/Cups12.jpg"
   },
   {
     "tarotId": 32,	
     "tarotName": "PAGE OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups11.jpg"
+    "src": "./assets/images/tarotcards/Cups11.jpg"
   },
   {
     "tarotId": 33,	
     "tarotName": "TEN OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups10.jpg"
+    "src": "./assets/images/tarotcards/Cups10.jpg"
   },
   {
     "tarotId": 34,	
     "tarotName": "NINE OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups09.jpg"
+    "src": "./assets/images/tarotcards/Cups09.jpg"
   },
   {
     "tarotId": 35,	
     "tarotName": "EIGHT OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups08.jpg"
+    "src": "./assets/images/tarotcards/Cups08.jpg"
   },
   {
     "tarotId": 36,	
     "tarotName": "SEVEN OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups07.jpg"
+    "src": "./assets/images/tarotcards/Cups07.jpg"
   },
   {
     "tarotId": 37,	
     "tarotName": "SIX OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups06.jpg"
+    "src": "./assets/images/tarotcards/Cups06.jpg"
   },
   {
     "tarotId": 38,	
     "tarotName": "FIVE OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups05.jpg"
+    "src": "./assets/images/tarotcards/Cups05.jpg"
   },
   {
     "tarotId": 39,	
     "tarotName": "FOUR OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups04.jpg"
+    "src": "./assets/images/tarotcards/Cups04.jpg"
   },
   {
     "tarotId": 40,	
     "tarotName": "THREE OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups03.jpg"
+    "src": "./assets/images/tarotcards/Cups03.jpg"
   },
   {
     "tarotId": 41,	
     "tarotName": "TWO OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups02.jpg"
+    "src": "./assets/images/tarotcards/Cups02.jpg"
   },
   {
     "tarotId": 42,	
     "tarotName": "ACE OF CUPS",
-    "src": "../../client/public/assets/images/tarotcards/Cups01.jpg"
+    "src": "./assets/images/tarotcards/Cups01.jpg"
   },
   {
     "tarotId": 43,	
     "tarotName": "KING OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles14.jpg"
+    "src": "./assets/images/tarotcards/Pentacles14.jpg"
   },
   {
     "tarotId": 44,	
     "tarotName": "QUEEN OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles13.jpg"
+    "src": "./assets/images/tarotcards/Pentacles13.jpg"
   },
   {
     "tarotId": 45,	
     "tarotName": "KNIGHT OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles12.jpg"
+    "src": "./assets/images/tarotcards/Pentacles12.jpg"
   },
   {
     "tarotId": 46,	
     "tarotName": "PAGE OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles11.jpg"
+    "src": "./assets/images/tarotcards/Pentacles11.jpg"
   },
   {
     "tarotId": 47,	
     "tarotName": "TEN OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles10.jpg"
+    "src": "./assets/images/tarotcards/Pentacles10.jpg"
   },
   {
     "tarotId": 48,	
     "tarotName": "NINE OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles09.jpg"
+    "src": "./assets/images/tarotcards/Pentacles09.jpg"
   },
   {
     "tarotId": 49,	
     "tarotName": "EIGHT OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles08.jpg"
+    "src": "./assets/images/tarotcards/Pentacles08.jpg"
   },
   {
     "tarotId": 50,	
     "tarotName": "SEVEN OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles07.jpg"
+    "src": "./assets/images/tarotcards/Pentacles07.jpg"
   },
   {
     "tarotId": 51,	
     "tarotName": "SIX OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles06.jpg"
+    "src": "./assets/images/tarotcards/Pentacles06.jpg"
   },
   {
     "tarotId": 52,	
     "tarotName": "FIVE OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles05.jpg"
+    "src": "./assets/images/tarotcards/Pentacles05.jpg"
   },
   {
     "tarotId": 53,	
     "tarotName": "FOUR OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles04.jpg"
+    "src": "./assets/images/tarotcards/Pentacles04.jpg"
   },
   {
     "tarotId": 54,	
     "tarotName": "THREE OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles03.jpg"
+    "src": "./assets/images/tarotcards/Pentacles03.jpg"
   },
   {
     "tarotId": 55,	
     "tarotName": "TWO OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles02.jpg"
+    "src": "./assets/images/tarotcards/Pentacles02.jpg"
   },
   {
     "tarotId": 56,	
     "tarotName": "ACE OF PENTACLES",
-    "src": "../../client/public/assets/images/tarotcards/Pentacles01.jpg"
+    "src": "./assets/images/tarotcards/Pentacles01.jpg"
   },
   {
     "tarotId": 57,	
     "tarotName": "THE FOOL",
-    "src": "../../client/public/assets/images/tarotcards/00-TheFool.jpg"
+    "src": "./assets/images/tarotcards/00-TheFool.jpg"
   },
   {
     "tarotId": 58,	
     "tarotName": "THE MAGICIAN",
-    "src": "../../client/public/assets/images/tarotcards/01-TheMagician.jpg"
+    "src": "./assets/images/tarotcards/01-TheMagician.jpg"
   },
   {
     "tarotId": 59,	
     "tarotName": "THE HIGH PRIESTESS",
-    "src": "../../client/public/assets/images/tarotcards/02-TheHighPriestess.jpg"
+    "src": "./assets/images/tarotcards/02-TheHighPriestess.jpg"
   },
   {
     "tarotId": 60,	
     "tarotName": "THE EMPRESS",
-    "src": "../../client/public/assets/images/tarotcards/03-TheEmpress.jpg"
+    "src": "./assets/images/tarotcards/03-TheEmpress.jpg"
   },
   {
     "tarotId": 61,	
     "tarotName": "THE EMPEROR",
-    "src": "../../client/public/assets/images/tarotcards/04-TheEmperor.jpg"
+    "src": "./assets/images/tarotcards/04-TheEmperor.jpg"
   },
   {
     "tarotId": 62,	
     "tarotName": "THE HIEROPHPANT",
-    "src": "../../client/public/assets/images/tarotcards/05-TheHierophant.jpg"
+    "src": "./assets/images/tarotcards/05-TheHierophant.jpg"
   },
   {
     "tarotId": 63,	
     "tarotName": "THE LOVERS",
-    "src": "../../client/public/assets/images/tarotcards/06-TheLovers.jpg"
+    "src": "./assets/images/tarotcards/06-TheLovers.jpg"
   },
   {
     "tarotId": 64,	
     "tarotName": "THE CHARIOT",
-    "src": "../../client/public/assets/images/tarotcards/07-TheChariot.jpg"
+    "src": "./assets/images/tarotcards/07-TheChariot.jpg"
   },
   {
     "tarotId": 65,	
     "tarotName": "STRENGTH",
-    "src": "../../client/public/assets/images/tarotcards/08-Strength.jpg"
+    "src": "./assets/images/tarotcards/08-Strength.jpg"
   },
   {
     "tarotId": 66,	
     "tarotName": "THE HERMIT",
-    "src": "../../client/public/assets/images/tarotcards/09-TheHermit.jpg"
+    "src": "./assets/images/tarotcards/09-TheHermit.jpg"
   },
   {
     "tarotId": 67,	
     "tarotName": "WHEEL OF FORTUNE",
-    "src": "../../client/public/assets/images/tarotcards/10-WheelOfFortune.jpg"
+    "src": "./assets/images/tarotcards/10-WheelOfFortune.jpg"
   },
   {
     "tarotId": 68,	
     "tarotName": "JUSTICE",
-    "src": "../../client/public/assets/images/tarotcards/11-Justice.jpg"
+    "src": "./assets/images/tarotcards/11-Justice.jpg"
   },
   {
     "tarotId": 69,	
     "tarotName": "THE HANGED MAN",
-    "src": "../../client/public/assets/images/tarotcards/12-TheHangedMan.jpg"
+    "src": "./assets/images/tarotcards/12-TheHangedMan.jpg"
   },
   {
     "tarotId": 70,	
     "tarotName": "DEATH",
-    "src": "../../client/public/assets/images/tarotcards/13-Death.jpg"
+    "src": "./assets/images/tarotcards/13-Death.jpg"
   },
   {
     "tarotId": 71,	
     "tarotName": "TEMPERANCE",
-    "src": "../../client/public/assets/images/tarotcards/14-Temperance.jpg"
+    "src": "./assets/images/tarotcards/14-Temperance.jpg"
   },
   {
     "tarotId": 72,	
     "tarotName": "THE DEVIL",
-    "src": "../../client/public/assets/images/tarotcards/15-TheDevil.jpg"
+    "src": "./assets/images/tarotcards/15-TheDevil.jpg"
   },
   {
     "tarotId": 73,	
     "tarotName": "THE TOWER",
-    "src": "../../client/public/assets/images/tarotcards/16-TheTower.jpg"
+    "src": "./assets/images/tarotcards/16-TheTower.jpg"
   },
   {
     "tarotId": 74,	
     "tarotName": "THE STAR",
-    "src": "../../client/public/assets/images/tarotcards/17-TheStar.jpg"
+    "src": "./assets/images/tarotcards/17-TheStar.jpg"
   },
   {
     "tarotId": 75,	
     "tarotName": "THE MOON",
-    "src": "../../client/public/assets/images/tarotcards/18-TheMoon.jpg"
+    "src": "./assets/images/tarotcards/18-TheMoon.jpg"
   },
   {
     "tarotId": 76,	
     "tarotName": "THE SUN",
-    "src": "../../client/public/assets/images/tarotcards/19-TheSun.jpg"
+    "src": "./assets/images/tarotcards/19-TheSun.jpg"
   },
   {
     "tarotId": 77,	
     "tarotName": "JUDGEMENT",
-    "src": "../../client/public/assets/images/tarotcards/20-Judgement.jpg"
+    "src": "./assets/images/tarotcards/20-Judgement.jpg"
   },
   {
     "tarotId": 78,	
     "tarotName": "THE WORLD",
-    "src": "../../client/public/assets/images/tarotcards/21-TheWorld.jpg"
+    "src": "./assets/images/tarotcards/21-TheWorld.jpg"
+  },
+  {
+    "tarotId": 79,	
+    "tarotName": "CARD BACK",
+    "src": "./assets/images/tarotcards/21-CardBacks.jpg"
   }
 ]

@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 
 export const ADD_USER = gql`
-    mutation addUser($username: String!, $email: String!, $zodiacName: String!, $timezone: Int!, $password: String!) {
+    mutation addUser($username: String!, $email: String!, $zodiacName: String!, $timezone: Float!, $password: String!) {
         addUser(username: $username, email: $email, zodiacName: $zodiacName, timezone: $timezone, password: $password) {
             token
             user {
@@ -36,6 +36,15 @@ export const SAVE_TAROT = gql`
         saveTarotRead(reading: $reading) {
         reading
         createdAt
+        }
+    }
+`;
+
+export const SAVE_HOROSCOPE = gql`
+    mutation SaveHoroscope($input: HoroscopeInput) {
+        saveHoroscope(input: $input) {
+        predictionDate
+        prediction
         }
     }
 `;

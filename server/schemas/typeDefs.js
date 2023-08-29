@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String!
     email: String!
     zodiacName: String
-    timezone: Int
+    timezone: Float
     journal: [Journal]
     savedHoroscope: [Horoscope]
     savedTarot: [Tarot]
@@ -61,7 +61,7 @@ const typeDefs = gql`
   }
   
   type Mutation {
-    addUser(username: String!, email: String!, zodiacName: String!, timezone: Int!, password: String!): Auth
+    addUser(username: String!, email: String!, zodiacName: String!, timezone: Float!, password: String!): Auth
     login(email: String!, password: String!): Auth
     saveHoroscope(input: HoroscopeInput): Horoscope
     saveTarotRead(reading: String!): Tarot
