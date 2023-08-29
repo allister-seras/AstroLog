@@ -48,3 +48,13 @@ export const SAVE_HOROSCOPE = gql`
         }
     }
 `;
+
+export const JOURNALS_ENTERIES = gql`
+    mutation createJournalEntry($input: JournalEntryInput) {
+      createJournalEntry(input: $input) {
+        createdAt
+        journalAuthor
+        journalText
+      }
+    }
+`
