@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import Form from 'react-bootstrap/Form';
+import { Button } from 'react-bootstrap';
 
 const NewUser = () => {
     // set initial form state
@@ -373,31 +375,47 @@ const NewUser = () => {
 
 
     return (
-        <div>
-            <form onSubmit={handleFormSubmit}>
-                <label htmlFor="userName">Username</label>
-                <input type='text' id='username' name='username' onChange={handleInputChange}/>
-                <label htmlFor="email">E-mail</label>
-                <input type='email' id='email' name='email' onChange={handleInputChange}/>
-                <label htmlFor="email">Password</label>
-                <input type='password' id='password' name='password' onChange={handleInputChange}/>
-                <label htmlFor="zodiacName">Sun Sign</label>
+        <main> 
+        <form onSubmit={handleFormSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicUser">
+                <Form.Label htmlFor="userName">Username</Form.Label>
+                <Form.Control type='text' id='username' name='username' onChange={handleInputChange}/>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId='formBasicEmail'>
+                <Form.Label htmlFor="email">E-mail</Form.Label>
+                <Form.Control type='email' id='email' name='email' onChange={handleInputChange}/>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label htmlFor="email">Password</Form.Label>
+                <Form.Control type='password' id='password' name='password' placeholder="Password" onChange={handleInputChange}/>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicZodiac">
+                <Form.Label htmlFor="zodiacName">Select Your Sun Sign</Form.Label>
                 <select defaultValue={'DEFAULT'} id='zodiacName' name='zodiacName' onChange={handleInputChange}>
                     <option value="DEFAULT" disabled>-- select your sun sign --</option>
                     {zodiacArray.map((element, index) => ( 
                     <option key={index} value={element.value}>{element.name}</option>
                     ))}
                 </select>
-                <label htmlFor="timezone">Time Zone</label>
+            </Form.Group>    
+
+            <Form.Group className="mb-3" controlId="formBasicTimeZone">
+                <Form.Label htmlFor="timezone">Select Your Time Zone</Form.Label>
                 <select defaultValue={'DEFAULT'} id='timezone' name='timezone' onChange={handleTimezone}>
                     <option value="DEFAULT" disabled>-- select your timezone --</option>
                     {timezonesArray.map((element, index) => ( 
                     <option key={index} value={element.value}>{element.name}</option>
                     ))}
                 </select>
-                <button disabled={!(userFormData.username && userFormData.email && userFormData.password && userFormData.zodiacName && userFormData.timezone)} type='submit'>Create Account</button>
-            </form>
-        </div>
+            </Form.Group>
+            <Button variant="primary" type="submit" disabled={!(userFormData.username && userFormData.email && userFormData.password && userFormData.zodiacName && userFormData.timezone)}>
+                Create Your Account
+            </Button>
+        </form>
+        </main>
     );
 };
 
