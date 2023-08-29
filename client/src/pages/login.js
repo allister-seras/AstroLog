@@ -5,6 +5,9 @@ import Auth from '../utils/auth';
 import { LOGIN_USER } from '../utils/mutations';
 import newUser from './newUser';
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 // TODO add user api function
 const Login = () => {
     // form data
@@ -52,18 +55,32 @@ const Login = () => {
 
     return (
         <div>
-            <form>
-                <input onChange={handleChange} type='Email' id='email' name='email'/>
-                <input onChange={handleChange} type='Password' id='password' name='password'/>
-                <input onClick={handleLogin} type='submit' value='login'/>
-            </form>
-            <div>
-                <form>
-                    <Link to={{ pathname: '/newUser'}}> 
-                        <input type='submit' value='Create new account'/>
-                    </Link>
-                </form>
-            </div>
+            <h2>Welcome Back To AstroLog!</h2>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control placeholder="Enter email" onChange={handleChange} type='Email' id='email' name='email'/>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control onChange={handleChange} type='Password' id='password' name='password' placeholder="Enter Password"/>
+            </Form.Group>
+
+            <Button onClick={handleLogin} variant="primary" type="submit value='login">
+                Submit
+            </Button>
+
+            <Form.Group>
+                <Form.Label>
+                    Don't Have an Account? Sign Up Below!
+                </Form.Label>
+                <div>
+                    <Button href='/newUser' variant="primary" value='Create new account'>
+                        Sign Up
+                    </Button>
+                </div>
+            </Form.Group>
+
         </div>
     );
 }

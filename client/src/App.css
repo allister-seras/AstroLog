@@ -75,3 +75,7 @@ main {
 .horoCard  {
     width: 100%;
 }
+
+main.form {
+    align-items: center;
+}
