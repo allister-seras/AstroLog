@@ -3,14 +3,14 @@ const formatDateFunction = require('../utils/formatDate.js');
 
 const horoscopeSchema = new Schema (
   {
-  predictionDate: {
-    type: Date,
-    default: Date.now,
-    get: date => formatDateFunction(date)
-  },
-  prediction: {
-    type: String
-  }
+    prediction: {
+      type: String
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: date => formatDateFunction(date)
+    },
   },
   {
     toJSON: {

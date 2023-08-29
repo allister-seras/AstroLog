@@ -24,13 +24,13 @@ const typeDefs = gql`
   }
 
   type Tarot {
-    reading: String!
+    reading: String
     createdAt: String
   }
 
   type Horoscope {
-    predictionDate: String
     prediction: String
+    createdAt: String
   }
 
   type Journal {
@@ -38,11 +38,6 @@ const typeDefs = gql`
     createdAt: String
     journalAuthor: String!
     journalText: String!
-  }
-
-  input HoroscopeInput {
-    predictionDate: String
-    prediction: String
   }
 
   input JournalEntryInput {
@@ -54,8 +49,6 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    users: [User]
-    user(username: String!): User
     tarotCard(tarotId: Int!): Card
     journals(username: String): [Journal]
   }
@@ -63,10 +56,9 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, zodiacName: String!, timezone: Float!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    saveHoroscope(input: HoroscopeInput): Horoscope
-    saveTarotRead(reading: String!): Tarot
+    saveHoroscope(prediction: String): Horoscope
+    saveTarotRead(reading: String): Tarot
     createJournalEntry(input: JournalEntryInput): Journal
-    removeJournalEntry(createdAt: Int): User
   }
 `;
 

@@ -16,6 +16,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     if (data !== undefined) {
      setUserInfo(data);
+     console.log(data);
     }
    }, [data]);
 

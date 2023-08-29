@@ -25,7 +25,7 @@ export const QUERY_ME = gql`
           journalText
         }
         savedHoroscope {
-          predictionDate
+          createdAt
           prediction
         }
         savedTarot {

@@ -41,15 +41,15 @@ export const SAVE_TAROT = gql`
 `;
 
 export const SAVE_HOROSCOPE = gql`
-    mutation SaveHoroscope($input: HoroscopeInput) {
-        saveHoroscope(input: $input) {
-        predictionDate
+    mutation SaveHoroscope($prediction: String!) {
+        saveHoroscope(prediction: $prediction) {
+        createdAt
         prediction
         }
     }
 `;
 
-export const JOURNALS_ENTERIES = gql`
+export const JOURNAL_ENTRIES = gql`
     mutation createJournalEntry($input: JournalEntryInput) {
       createJournalEntry(input: $input) {
         createdAt

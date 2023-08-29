@@ -59,12 +59,15 @@ const Tarot = () => {
       }
       event.target.style.display = "none";
       tarotData(love, career, finance);
+    };
+
+    const saveFunction = async function() {
       try {
-        const readData = JSON.stringify({...tarotRead});
+        const reading = JSON.stringify({...tarotRead});
+        console.log(reading);
         const { data } = await saveTarot({
-          variables: readData,
+          variables: {reading: reading},
         });
-        console.log(data);
       } catch (e) {
         console.error(e);
       }
@@ -146,12 +149,12 @@ const Tarot = () => {
             <h1>Card Selection</h1>
             <p>Click the buttons below to select tarot cards for each category. Once all three have been selected we will display your reading!</p>
             <div>
-              <button id="love" name='love' onClick={handleCardPull}>
+              <button id="love" onClick={handleCardPull}>
                 Love
               </button>
             </div>
             <div>
-              <button id="career" name='career' onClick={handleCardPull}>
+              <button id="career" onClick={handleCardPull}>
                 Career
               </button>
             </div>
@@ -174,6 +177,7 @@ const Tarot = () => {
           <h1>Finance</h1>
           <TarotCard id={finance}/>
           <p>{tarotRead.finance}</p>
+          <button onClick={saveFunction}>Save</button>
           <button onClick={resetFunction}>Reset</button>
         </div>
       ) : ( 
