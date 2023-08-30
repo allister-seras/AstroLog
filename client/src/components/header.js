@@ -17,7 +17,7 @@ const Header = () => {
               <a href='/tarot'>Tarot Reading</a>
             </li>
             <li >
-              <a href='/home'>Journal Entries</a>
+              <a href='/'>Journal Entries</a>
             </li>
             <li >
               <a href='/login'>Log In</a>

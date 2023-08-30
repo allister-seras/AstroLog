@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 const Journal = (props) => {
     return (<div>
         <div>
-            {console.log(props)}
             <h2>{`Jounal date ${props.date}`}</h2>
             <p>
                 {props.entry}
