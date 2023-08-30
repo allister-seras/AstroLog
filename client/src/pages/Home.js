@@ -3,18 +3,16 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
 import '../App.css';
-import TarotCard from '../components/TarotCard';
-import HoroscopeCard from '../components/horoscopeCard'
 import Journal from '../components/journal';
+import Entry from '../components/entry'
 
 const Home = () => {
     //const {loading, error, data} = useQuery(QUERY_ME);
+    const [entryVisible, setEntryVisible] = useState(false);
 
-    // TODO finish
-    const newEntry = (event) => {
-        event.preventDefault();
-        // tab to create new entry
-    }
+    const toggleEntry = () => {
+      setEntryVisible(!entryVisible);
+    };
 
     const loading = false;
     const error = false;
@@ -54,8 +52,10 @@ const Home = () => {
                 />)
             })}
         </div>
-
-        <button onClick={newEntry}></button>
+        {entryVisible ? <Entry /> : null}
+      <button type="button" onClick={toggleEntry}>
+        {entryVisible ? 'Cancel' : 'New Entry'}
+      </button>
     </div>
     );
 }
