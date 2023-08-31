@@ -146,8 +146,12 @@ const Tarot = () => {
         ) : (
         // if not all cards have been pulled render this
         <div>
-            <h1>Card Selection</h1>
-            <p>Click the buttons below to select tarot cards for each category. Once all three have been selected we will display your reading!</p>
+            <h1>Tarot Reading</h1>
+            <p>Tarot, a deck of 78 cards, holds a tapestry of stories and symbols. From their European origins to modern divination, Tarot has found its place in helping individuals uncover hidden truths, make decisions, and find clarity.</p>
+            <p>Tarot, a deck of 78 cards, is a powerful tool for uncovering insights and finding clarity. It has two main parts: the Minor Arcana and the Major Arcana.<br />
+            The Minor Arcana has 56 cards, divided into four suits, like a regular deck of cards. Each suit represents different parts of life, such as emotions or thoughts, and helps us understand day-to-day situations.<br />
+            The Major Arcana has 22 special cards with deep meanings, like The Fool or The Empress. These cards signify big life events or important lessons.<br />
+            During a reading, Tarot cards are drawn to tell a story and provide guidance. Tarot readers use their intuition and knowledge to interpret the cards and help you find answers about your past, present, or future. Whether it's about love, work, or personal growth, Tarot can light your way on life's journey."</p>
             <div>
               <button id="love" onClick={handleCardPull}>
                 Love

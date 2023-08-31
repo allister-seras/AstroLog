@@ -13,6 +13,7 @@ import Tarot from './pages/Tarot';
 import Header from './components/header';
 import Footer from './components/footer';
 import { UserProvider } from './utils/UserContext';
+import Journal from './components/journal';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -63,8 +64,12 @@ function App() {
               element={<Tarot/>}
             />
             <Route
-                    path="/horoscope"
-                    element={<Horoscope />}
+                path="/horoscope"
+                element={<Horoscope />}
+            />
+                <Route
+                path="/journal"
+                element={<Journal />}
             />
             {/* Add routes for the other pages */}
           </Routes>
