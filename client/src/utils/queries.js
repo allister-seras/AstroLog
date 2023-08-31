@@ -19,9 +19,7 @@ export const QUERY_ME = gql`
         zodiacName
         timezone
         journal {
-          _id
-          createdAt
-          journalAuthor
+          entryDate
           journalText
         }
         savedHoroscope {

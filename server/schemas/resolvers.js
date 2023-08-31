@@ -7,7 +7,7 @@ const resolvers = {
         // By adding context to our query, we can retrieve the logged in user without specifically searching for them
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user._id }).populate('savedHoroscope').populate('savedTarot');
+                return User.findOne({ _id: context.user._id }).populate('savedHoroscope').populate('savedTarot').populate('journal');
             }
             throw new AuthenticationError('You need to be logged in!');
         },
@@ -52,22 +52,21 @@ const resolvers = {
               // Return an `Auth` object that consists of the signed token and user's information
               return { token, user };
         },
-        createJournalEntry: async (parent, { JournalEntryInput }, context) => {
-              // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-              if (context.user) {
-                return User.findOneAndUpdate(
+        createJournalEntry: async (parent, args, context) => {
+            if (context.user) {
+                const savedJournal = await Journal.create(args);
+                const user = await User.findOneAndUpdate(
                   { _id: context.user._id },
                   {
-                    $addToSet: [{ journals: JournalEntryInput }],
+                    $addToSet: { journal: savedJournal },
                   },
                   {
                     new: true,
-                    runValidators: true,
                   }
                 );
+                return user, savedJournal;
               }
-              // If user attempts to execute this mutation and isn't logged in, throw an error
-              throw new AuthenticationError('You need to be logged in!');
+            throw new AuthenticationError('You need to be logged in!');
         },
         saveHoroscope: async (parent, args, context) => {
             if (context.user) {

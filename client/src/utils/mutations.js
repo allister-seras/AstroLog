@@ -49,12 +49,11 @@ export const SAVE_HOROSCOPE = gql`
     }
 `;
 
-export const JOURNAL_ENTRIES = gql`
-    mutation createJournalEntry($input: JournalEntryInput) {
-      createJournalEntry(input: $input) {
-        createdAt
-        journalAuthor
+export const CREATE_JOURNAL = gql`
+    mutation createJournalEntry($entryDate: String, $journalText: String) {
+        createJournalEntry(entryDate: $entryDate, journalText: $journalText) {
+        entryDate
         journalText
-      }
-    }
-`
+        }
+  }
+`;
