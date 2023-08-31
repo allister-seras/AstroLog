@@ -155,7 +155,8 @@ const Horoscope = () => {
         { buttonValue === "false" ? (
         <div>
           <h1>Daily Horoscope</h1>
-            <p>Our capybara cosmonauts have fetched your time and star data from your user information. Press the button below for your daily horoscope!</p>
+            <p>Sun sign horoscopes are like personalized letters from the universe, offering a glimpse into the cosmic energies that shape our lives. When you generate your horoscope, you'll receive a treasure trove of insights. The stars will whisper secrets about your emotions, revealing the ebbs and flows of your heart. Your health will be illuminated, guiding you on your well-being journey. Luck will dance through the constellations, hinting at fortunate moments. Personal life will unfold like a celestial love story, and your profession will sparkle with career wisdom. As you traverse the astral pathways, even your travel plans will find their guiding stars. So, embark on this celestial adventure and let the cosmos reveal its mysteries!</p>
+            <p>Our capybara cosmonauts have fetched your time and star data from your user information. Press the button below to receive your daily horoscope!</p>
           <button value={buttonValue} onClick={generateHoroscope}>
             Generate Reading
           </button>
