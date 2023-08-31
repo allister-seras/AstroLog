@@ -83,31 +83,28 @@ const Horoscope = () => {
           variables: {prediction: prediction}
         });
         console.log(data);
+        if (buttonValue === "true") {
+          setButtonValue("false");
+        }
+        // clear form values
+        setHoroscopeData({prediction_date: '', prediction: {
+          emotions: '',
+          health: '',
+          luck: '',
+          personal_life: '',
+          profession: '',
+          travel: ''
+        }
+        });
+        // clear form values
+        setUserInfo({
+          zodiacName: '',
+          timezone: ''
+        });
+        window.location.reload();
       } catch (e) {
         console.error(e);
       }
-    };
-
-    const resetFunction = function() {
-      if (buttonValue === "true") {
-        setButtonValue("false");
-      }
-      // clear form values
-      setHoroscopeData({prediction_date: '', prediction: {
-        emotions: '',
-        health: '',
-        luck: '',
-        personal_life: '',
-        profession: '',
-        travel: ''
-      }
-      });
-      // clear form values
-      setUserInfo({
-        zodiacName: '',
-        timezone: ''
-      });
-      window.location.reload();
     };
 
     // calling horoscope function (empty array so it runs once)
@@ -146,18 +143,17 @@ const Horoscope = () => {
             <HoroscopeCard title="Profession" content={horoscopeData.prediction.profession} />
             <HoroscopeCard title="Travel" content={horoscopeData.prediction.travel} />
             </section>
-            <button onClick={saveFunction}>Save</button>
-            <button onClick={resetFunction}>Reset</button>
+            <button className="m-4 p-4 btn btn-primary" onClick={saveFunction}>Save</button>
         </main>
         ) : (
           <p></p>
         )}
         { buttonValue === "false" ? (
-        <div>
+        <div className="p-5">
           <h1>Daily Horoscope</h1>
             <p>Sun sign horoscopes are like personalized letters from the universe, offering a glimpse into the cosmic energies that shape our lives. When you generate your horoscope, you'll receive a treasure trove of insights. The stars will whisper secrets about your emotions, revealing the ebbs and flows of your heart. Your health will be illuminated, guiding you on your well-being journey. Luck will dance through the constellations, hinting at fortunate moments. Personal life will unfold like a celestial love story, and your profession will sparkle with career wisdom. As you traverse the astral pathways, even your travel plans will find their guiding stars. So, embark on this celestial adventure and let the cosmos reveal its mysteries!</p>
             <p>Our capybara cosmonauts have fetched your time and star data from your user information. Press the button below to receive your daily horoscope!</p>
-          <button value={buttonValue} onClick={generateHoroscope}>
+          <button className="btn btn-primary" value={buttonValue} onClick={generateHoroscope}>
             Generate Reading
           </button>
         </div>
