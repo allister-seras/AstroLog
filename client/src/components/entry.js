@@ -78,8 +78,8 @@ const Entry = (props) => {
         </Form.Group>
         <Form.Group className="mb-3">
             <Form.Label htmlFor="horoscopeInput">Horoscope</Form.Label>
-            <select name="horoscope" id="horoscopeInput" defaultValue={'DEFAULT'} onChange={handleInputChange}>
-            <option value="DEFAULT" disabled>Horoscope</option>
+            <select className="text-wrap" name="horoscope" id="horoscopeInput" defaultValue={'DEFAULT'} onChange={handleInputChange}>
+            <option  value="DEFAULT" disabled>Horoscope</option>
             { horoscope?.map((horoscopeIndex, key) => {
                 return <option
                 key={key}
@@ -91,10 +91,10 @@ const Entry = (props) => {
         </Form.Group>
         <Form.Group className="mb-3">
             <Form.Label htmlFor="tarotInput">Tarot</Form.Label>
-            <select name="tarot" id="tarotInput" defaultValue={'DEFAULT'} onChange={handleInputChange}>
+            <select className="text-wrap" name="tarot" id="tarotInput" defaultValue={'DEFAULT'} onChange={handleInputChange}>
                 <option value="DEFAULT" disabled>Tarot</option>
                 {tarot?.map((tarotIndex, key) => {
-                    return <option 
+                    return <option
                     key={key}
                     value={tarotIndex.reading}>
                         ({tarotIndex.createdAt}) {tarotIndex.reading}

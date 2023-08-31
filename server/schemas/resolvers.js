@@ -14,9 +14,8 @@ const resolvers = {
         tarotCard: async (parent, { tarotId }) => {
             return Card.findOne({ tarotId: tarotId });
         },
-        journals: async (parent, { username }) => {
-            const params = username ? { username } : {};
-            return Journal.find(params).sort({ createdAt: -1 });
+        journals: async (parent, username, context ) => {
+            return Journal.find({});
         },
     },
 

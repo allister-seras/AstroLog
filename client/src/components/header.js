@@ -13,7 +13,7 @@ const Header = ({ isAuthenticated }) => {
 
   return (
     <nav className='nav'>
-      <a href='/' className='site-title'>AstroLog</a>
+      <a href='/' className='p-4 site-title'>AstroLog</a>
       <ul>
         <li>
           <a href='/horoscope'>Horoscope</a>
