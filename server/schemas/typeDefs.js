@@ -34,17 +34,8 @@ const typeDefs = gql`
   }
 
   type Journal {
-    _id: ID
-    createdAt: String
-    journalAuthor: String!
-    journalText: String!
-  }
-
-  input JournalEntryInput {
-    _id: ID
-    createdAt: String
-    journalAuthor: String!
-    journalText: String!
+    entryDate: String
+    journalText: String
   }
 
   type Query {
@@ -58,7 +49,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     saveHoroscope(prediction: String): Horoscope
     saveTarotRead(reading: String): Tarot
-    createJournalEntry(input: JournalEntryInput): Journal
+    createJournalEntry(entryDate: String, journalText: String): Journal
   }
 `;
 
