@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
+  "engines": {
+    "node": "12.11.1"
+    },
   "scripts": {
     "start": "node server/server.js --ignore client",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
@@ -12,7 +15,7 @@
     "build": "cd client && npm run build",
     "api-test": "cd client/src/utils/api && node index.js"
   },
-  "author": "",
+  "author": "Capybara Cosmonauts",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.3.0"
