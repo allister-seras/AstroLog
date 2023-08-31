@@ -17,6 +17,11 @@ const Tarot = () => {
     // saveTarotRead function
     const [ saveTarot, {error} ] = useMutation(SAVE_TAROT);
 
+    const checkToken = localStorage.getItem("id_token");
+
+    if (!checkToken) {
+      return <h1>Please log in to view this page.</h1>
+    };
 
     // api info imported from dotenv
     const userID = process.env.REACT_APP_USER_ID;

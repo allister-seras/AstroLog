@@ -41,7 +41,7 @@ const typeDefs = gql`
   type Query {
     me: User
     tarotCard(tarotId: Int!): Card
-    journals(username: String): [Journal]
+    journals: [Journal]
   }
   
   type Mutation {

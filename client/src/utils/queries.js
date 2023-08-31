@@ -33,3 +33,12 @@ export const QUERY_ME = gql`
       }
     }
 `;
+
+export const QUERY_JOURNALS = gql`
+  query queryJournals {
+    journals {
+      entryDate
+      journalText
+    }
+  }
+`;

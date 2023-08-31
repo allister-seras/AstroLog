@@ -20,6 +20,12 @@ const Horoscope = () => {
       travel: ''
     } });
 
+    const checkToken = localStorage.getItem("id_token");
+
+    if (!checkToken) {
+      return <h1>Please log in to view this page.</h1>
+    };
+
     const data = useUserContext();
     
     const [userInfo, setUserInfo] = useState({zodiacName: '', timezone: ''});
