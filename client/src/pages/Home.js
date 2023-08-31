@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
 import '../App.css';
-import Journal from '../components/journal';
+import Journal from '../components/journalForm';
 import Entry from '../components/entry'
 
 const Home = () => {

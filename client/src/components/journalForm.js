@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Journal = (props) => {
+const JournalForm = (props) => {
     return (<div>
         <div>
             <h2>{`Jounal date ${props.date}`}</h2>
@@ -19,4 +19,4 @@ const Journal = (props) => {
     </div>);
 }
 
-export default Journal;
+export default JournalForm;
