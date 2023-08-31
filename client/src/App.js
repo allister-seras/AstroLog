@@ -71,7 +71,6 @@ function App() {
                 path="/journal"
                 element={<Journal />}
             />
-            {/* Add routes for the other pages */}
           </Routes>
         </main>
       </Router>
