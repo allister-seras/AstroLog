@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 
 import Particle from './particle';
 import '../App.css';
+import Auth from '../utils/auth'
 
 const Header = ({ isAuthenticated }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated);
+  const [isLoggedIn, setIsLoggedIn] = useState(Auth.loggedIn());
 
-  useEffect(() => {
-    setIsLoggedIn(isAuthenticated);
-  }, [isAuthenticated]);
+  const logout = () => {
+    Auth.logout();
+  }
 
   return (
     <nav className='nav'>
@@ -25,7 +26,7 @@ const Header = ({ isAuthenticated }) => {
         </li>
         <li>
           {isLoggedIn ? (
-            <a href='/logout'>Log Out</a>
+            <a onClick ={logout} href='/login'>Log Out</a>
           ) : (
             <a href='/login'>Log In</a>
           )}
