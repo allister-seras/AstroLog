@@ -7,7 +7,22 @@ import JournalForm from '../components/journalForm';
 import Entry from '../components/entry'
 
 const Journal = () => {
-    //const {loading, error, data} = useQuery(QUERY_ME);
+    // try {
+    //     const { loading, error, data } = useQuery(QUERY_ME);
+    //     console.log(data)
+    //     if (loading) {
+    //         <h1>Loading...</h1>
+    //     }
+    
+    //     if (error) {
+    //         return (<h1>Please login!</h1>)
+    //     }
+    //     console.log(data)
+    // } catch {
+    //     console.log("error")
+    // }
+
+
     const [entryVisible, setEntryVisible] = useState(false);
 
     const toggleEntry = () => {
@@ -28,14 +43,6 @@ const Journal = () => {
         tarot: "tarot",
         prediction: "stuff"
     }];
-
-    if (loading) {
-        <h1>Loading...</h1>
-    }
-
-    if (error) {
-        return (<h1>Please login!</h1>)
-    }
 
     return (
     <div>
