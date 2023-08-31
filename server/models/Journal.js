@@ -14,10 +14,8 @@ const journalSchema = new Schema(
       required: true,
       trim: true,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: date => formatDateFunction(date)
+    entryDate: {
+      type: String
     },
     savedHoroscope: [{
       type: Schema.Types.ObjectId,
