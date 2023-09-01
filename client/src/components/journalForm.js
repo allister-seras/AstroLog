@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const JournalForm = (props) => {
-    console.log(props.journals);
     return (
     <div>
+        <h3>{props.date}</h3>
+        <p>{props.journalText}</p>
     </div>
     );
 }

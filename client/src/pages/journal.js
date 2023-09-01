@@ -10,8 +10,6 @@ const Journal = () => {
     const [entryVisible, setEntryVisible] = useState(false);
     const { loading, data } = useQuery(QUERY_JOURNALS);
 
-    console.log(data);
-
     const toggleEntry = () => {
       setEntryVisible(!entryVisible);
     };
@@ -29,7 +27,15 @@ const Journal = () => {
 
     return (
     <div>
+       {data.journals.map((entry, key)=> {
+          return ( <JournalForm
+              key={key}
+              date={entry.entryDate}
+              journalText={entry.journalText}
+            />)
+        })}
         <h1>Create a journal entry</h1>
+        
         {entryVisible ? <Entry /> : null}
       <button className="btn btn-primary" type="button" onClick={toggleEntry}>
         {entryVisible ? 'Cancel' : 'New Entry'}
