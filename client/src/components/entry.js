@@ -48,11 +48,9 @@ const Entry = (props) => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        const entryDate = userFormData.entryDate;
-        const journalText = userFormData.journalText;
         try {
         const { data } = await createJournal({
-            variables: { entryDate: entryDate, journalText: journalText },
+            variables: { ...userFormData },
         });
         console.log(data);
         } catch (err) {
