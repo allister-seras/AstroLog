@@ -45,7 +45,7 @@ function App() {
       <Header />
       <UserProvider>
       <Router>
-        <main className="flex-column justify-center align-center min-100-vh">
+        <main className="flex-column justify-center align-center min-height-100%">
           <Routes>
             <Route
               path="/login"
