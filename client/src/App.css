@@ -79,3 +79,17 @@ main {
 main.form {
     align-items: center;
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(192, 181, 29);
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  .footer-content {
+    max-width: 800px; /* Adjust the maximum width as needed */
+  }
