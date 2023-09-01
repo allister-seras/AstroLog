@@ -46,40 +46,40 @@ const NewUser = () => {
     };
 
     const zodiacArray = [
-        {name:"Aries (March 21 - April 19)",
+        {name:"♈︎ Aries (March 21 - April 19)",
         value: "aries"},
 
-        {name:"Taurus (April 20 - May 20)",
+        {name:"♉︎ Taurus (April 20 - May 20)",
         value: "taurus"},
 
-        {name:"Gemini (May 21 - June 20)",
+        {name:"♊︎ Gemini (May 21 - June 20)",
         value: "gemini"},
 
-        {name:"Cancer (June 21 - July 22)",
+        {name:"♋︎ Cancer (June 21 - July 22)",
         value: "cancer"},
 
-        {name:"Leo (July 23 - August 22)",
+        {name:"♌︎ Leo (July 23 - August 22)",
         value: "leo"},
 
-        {name:"Virgo(August 23 - September 22)",
+        {name: "♍︎ Virgo(August 23 - September 22)",
         value: "virgo"},
 
-        {name:"Libra (September 23 - October 22)",
+        {name:"♎︎ Libra (September 23 - October 22)",
         value: "libra"},
 
-        {name:"Scorpio (October 23 - November 21)",
+        {name:"♏︎ Scorpio (October 23 - November 21)",
         value: "scorpio"},
 
-        {name:"Sagittarius (November 22 - December 21)",
+        {name:"♐︎ Sagittarius (November 22 - December 21)",
         value: "sagittarius"},
 
-        {name:"Capricorn (December 22 - January 19)",
+        {name:"♑︎ Capricorn (December 22 - January 19)",
         value: "capricorn"},
 
-        {name:"Aquarius (January 20 - February 18)",
+        {name:"♒︎ Aquarius (January 20 - February 18)",
         value: "aquarius"},
 
-        {name:"Pisces (February 19 - March 20)",
+        {name:"♓︎ Pisces (February 19 - March 20)",
         value: "pisces"},
     ];
 
