@@ -36,6 +36,8 @@ const typeDefs = gql`
   type Journal {
     entryDate: String
     journalText: String
+    tarot: String
+    horoscope: String
   }
 
   type Query {
@@ -49,7 +51,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     saveHoroscope(prediction: String): Horoscope
     saveTarotRead(reading: String): Tarot
-    createJournalEntry(entryDate: String, journalText: String): Journal
+    createJournalEntry(entryDate: String, journalText: String, tarot: String, horoscope: String): Journal
   }
 `;
 

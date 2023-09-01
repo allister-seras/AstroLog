@@ -31,6 +31,8 @@ const Journal = () => {
           return ( <JournalForm
               key={key}
               date={entry.entryDate}
+              tarot={entry.tarot}
+              horoscope={entry.horoscope}
               journalText={entry.journalText}
             />)
         })}

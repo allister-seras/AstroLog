@@ -8,6 +8,12 @@ const journalSchema = new Schema(
       required: true,
       trim: true
     },
+    horoscope: {
+      type: String,
+    },
+    tarot: {
+      type: String,
+    },
     entryDate: {
       type: String
     },

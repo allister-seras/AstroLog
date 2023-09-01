@@ -50,8 +50,8 @@ export const SAVE_HOROSCOPE = gql`
 `;
 
 export const CREATE_JOURNAL = gql`
-    mutation createJournalEntry($entryDate: String, $journalText: String) {
-        createJournalEntry(entryDate: $entryDate, journalText: $journalText) {
+    mutation createJournalEntry($entryDate: String, $journalText: String, $tarot: String, $horoscope: String) {
+        createJournalEntry(entryDate: $entryDate, journalText: $journalText, horoscope: $horoscope, tarot: $tarot) {
         entryDate
         journalText
         }
