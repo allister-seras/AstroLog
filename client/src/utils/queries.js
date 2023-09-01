@@ -39,6 +39,8 @@ export const QUERY_JOURNALS = gql`
     journals {
       entryDate
       journalText
+      horoscope
+      tarot
     }
   }
 `;
